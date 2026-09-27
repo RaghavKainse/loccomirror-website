@@ -99,30 +99,6 @@ export function Footer() {
 
         </div>
 
-        {/* SEO Keywords Tag Bar for Search Engine Indexing */}
-        <div style={{ 
-          borderTop: '1px solid rgba(255, 255, 255, 0.06)', 
-          padding: '24px 0 20px', 
-          fontSize: '12px', 
-          color: '#475569', 
-          lineHeight: 1.8 
-        }}>
-          <span style={{ color: '#94a3b8', fontWeight: 600, marginRight: '6px' }}>Popular Searches:</span>
-          <span>Locco Mirror</span> • 
-          <span>Locco Mirror Download</span> • 
-          <span>Screen Mirroring</span> • 
-          <span>Android to PC USB Screen Mirroring</span> • 
-          <span>Zero Lag Screen Mirror for Gaming</span> • 
-          <span>BGMI Screen Mirror to PC</span> • 
-          <span>Free Fire Screen Mirror PC</span> • 
-          <span>Screen Mirror with Internal Audio</span> • 
-          <span>4K 120FPS Screen Mirror</span> • 
-          <span>Low Latency Screen Mirroring App</span> • 
-          <span>Scrcpy Alternative with Audio</span> • 
-          <span>Direct USB Phone to Laptop Mirror</span> • 
-          <span>Best Screen Mirroring Software Windows 10/11</span>
-        </div>
-
         {/* Bottom copyright line */}
         <div 
           style={{ 
