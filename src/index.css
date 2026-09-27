@@ -271,7 +271,25 @@ h1, h2, h3, h4, h5, h6 {
   background: #94a3b8;
 }
 
+.mobile-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: #0f172a;
+}
+
 @media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .nav-btn-guide {
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: block !important;
+  }
   .douwan-grid {
     flex-direction: column !important;
     align-items: center !important;

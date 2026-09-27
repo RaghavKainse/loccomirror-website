@@ -75,7 +75,7 @@ export function Navbar({ onDownloadClick }) {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav>
+        <nav className="desktop-nav">
           <ul style={{ display: 'flex', alignItems: 'center', gap: '28px', listStyle: 'none', margin: 0, padding: 0 }}>
             <li>
               <a href="#downloads" style={{ textDecoration: 'none', color: '#0078d4', fontSize: '14.5px', fontWeight: 600 }}>
@@ -99,7 +99,7 @@ export function Navbar({ onDownloadClick }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <a
             href="#user-guide"
-            className="btn btn-secondary"
+            className="btn btn-secondary nav-btn-guide"
             style={{ padding: '8px 16px', fontSize: '13.5px' }}
           >
             <BookOpen size={15} color="#0078d4" />
@@ -122,7 +122,6 @@ export function Navbar({ onDownloadClick }) {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
-            style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: '6px', color: '#0f172a', display: 'none' }}
             className="mobile-toggle"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
