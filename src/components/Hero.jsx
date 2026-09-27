@@ -122,7 +122,7 @@ export function Hero({ onTriggerDownload }) {
 
         {/* Hero Title */}
         <h1 ref={titleRef} style={{ fontSize: '3.6rem', fontWeight: 800, color: '#0f172a', margin: '0 auto 20px auto', letterSpacing: '-0.035em', lineHeight: 1.15 }}>
-          Real-Time Screen & Audio Mirroring <br />
+          Locco Mirror — USB Screen & Audio Mirroring <br />
           <span style={{ color: '#0078d4' }}>At The Speed of Light.</span>
         </h1>
 
