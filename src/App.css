@@ -1,0 +1,240 @@
+/* App-specific Layouts & Micro-interactions */
+
+/* Hero Section */
+.hero-section {
+  padding-top: 60px;
+  padding-bottom: 70px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  color: #1d4ed8;
+  margin-bottom: 20px;
+}
+
+.pulse-indicator {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+.pulse-indicator::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background-color: #10b981;
+  opacity: 0.6;
+  animation: pulseRing 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  50% { transform: scale(2); opacity: 0; }
+  100% { transform: scale(0.8); opacity: 0; }
+}
+
+/* Interactive Device Screen Showcase */
+.mockup-wrapper {
+  position: relative;
+  max-width: 1040px;
+  margin: 0 auto;
+  border-radius: 18px;
+  padding: 8px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+}
+
+.mockup-frame {
+  background: #0f1118;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #334155;
+}
+
+.mockup-titlebar {
+  background: #141722;
+  height: 40px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.window-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.window-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.mockup-content {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 440px;
+}
+
+@media (max-width: 860px) {
+  .mockup-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mockup-sidebar {
+  background: #0e1017;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mockup-display {
+  background: radial-gradient(circle at center, #171b29 0%, #0a0b10 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.phone-skin {
+  width: 230px;
+  height: 400px;
+  background: #000;
+  border: 4px solid #2f3444;
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 14px;
+  background: #111;
+  border-radius: 20px;
+  z-index: 10;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #121526, #1c2237);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 26px 14px 18px;
+  position: relative;
+}
+
+.game-sim {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.game-target {
+  width: 70px;
+  height: 70px;
+  margin: 12px auto;
+  border-radius: 50%;
+  background: radial-gradient(circle, #0078d4 20%, transparent 70%);
+  border: 2px dashed #0078d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulseTarget 2s ease-in-out infinite;
+}
+
+@keyframes pulseTarget {
+  0%, 100% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+/* Sound Wave animation */
+@keyframes soundBarPulse {
+  0%, 100% { height: 6px; }
+  50% { height: 24px; }
+}
+
+.sound-bar {
+  width: 3px;
+  background-color: #0078d4;
+  border-radius: 2px;
+  animation: soundBarPulse 1.2s ease-in-out infinite;
+}
+
+.sound-bar:nth-child(1) { animation-delay: 0.1s; }
+.sound-bar:nth-child(2) { animation-delay: 0.35s; }
+.sound-bar:nth-child(3) { animation-delay: 0.15s; }
+.sound-bar:nth-child(4) { animation-delay: 0.45s; }
+.sound-bar:nth-child(5) { animation-delay: 0.25s; }
+.sound-bar:nth-child(6) { animation-delay: 0.05s; }
+
+/* Mode Switcher Pill */
+.mode-switch-container {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 4px;
+  border-radius: var(--radius-full);
+}
+
+.mode-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: #94a3b8;
+  transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+  background: #0078d4;
+  color: #ffffff;
+}
+
+/* Telemetry Stats Card */
+.stat-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+}
+
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
