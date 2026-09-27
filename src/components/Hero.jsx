@@ -84,7 +84,7 @@ export function Hero({ onTriggerDownload }) {
         <div ref={pillRef} style={{ display: 'inline-block' }}>
           <div className="hero-pill">
             <span className="pulse-indicator"></span>
-            <span>Locco Mirror 1.0 — Real-Time USB Screen &amp; Uncompressed Audio</span>
+            <span>Rated #1 Best Screen Mirror Software for PC &amp; Android</span>
             <Zap size={14} color="#0078d4" />
           </div>
         </div>
@@ -101,8 +101,8 @@ export function Hero({ onTriggerDownload }) {
             lineHeight: 1.15 
           }}
         >
-          Locco Mirror — USB Screen &amp; Audio Mirroring <br />
-          <span style={{ color: '#0078d4' }}>At The Speed of Light.</span>
+          The Best Screen Mirror Software <br />
+          <span style={{ color: '#0078d4' }}>For PC &amp; Android (Ultra-Low Latency)</span>
         </h1>
 
         {/* Hero Subtitle */}
@@ -112,13 +112,12 @@ export function Hero({ onTriggerDownload }) {
             fontSize: '1.2rem', 
             color: '#475569', 
             margin: '0 auto 36px auto', 
-            maxWidth: '780px', 
+            maxWidth: '820px', 
             lineHeight: 1.6 
           }}
         >
-          Real-time, ultra-low latency (<strong style={{ color: '#0f172a' }}>&lt;10ms</strong>) screen and uncompressed 
-          <strong style={{ color: '#0f172a' }}> 48kHz PCM audio</strong> mirroring from your phone to Windows over USB. 
-          Zero third-party wrappers, zero CPU copies on the GPU pipeline, and Direct3D 11 hardware presentation.
+          Experience <strong>Locco Mirror</strong> — the best USB screen and audio mirroring software. Enjoy sub-10ms latency (<strong style={{ color: '#0f172a' }}>&lt;10ms</strong>), crystal-clear 
+          <strong style={{ color: '#0f172a' }}> 48kHz stereo sound</strong>, and smooth 120 FPS video with Direct3D 11 GPU acceleration for competitive mobile gaming and streaming.
         </p>
 
         {/* Action Buttons */}

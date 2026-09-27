@@ -79,16 +79,16 @@ export function Architecture() {
       <div className="app-container">
         
         {/* Simple Section Header */}
-        <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 50px' }}>
+        <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
           <div className="badge badge-blue" style={{ marginBottom: '14px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
             <Sparkles size={14} />
-            <span>Why Choose Locco Mirror</span>
+            <span>Top Rated in 2026</span>
           </div>
           <h2 style={{ fontSize: '2.5rem', marginBottom: '12px', color: '#0f172a', fontWeight: 800, letterSpacing: '-0.03em' }}>
-            Built for High-Performance Mirroring
+            Why Locco Mirror is the Best Screen Mirror Software
           </h2>
           <p style={{ color: '#64748b', fontSize: '1.1rem', margin: 0 }}>
-            Everything you need for seamless mobile gaming, streaming, and screen sharing on Windows.
+            Ranked #1 best screen mirroring software for competitive mobile gaming, zero-latency USB response, and uncompressed game sound.
           </p>
         </div>
 
