@@ -276,11 +276,20 @@ h1, h2, h3, h4, h5, h6 {
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 8px;
   color: #0f172a;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.mobile-toggle:hover {
+  background: #f1f5f9;
 }
 
 @media (max-width: 768px) {
+  .app-container {
+    padding: 0 16px !important;
+  }
   .desktop-nav {
     display: none !important;
   }
@@ -288,10 +297,11 @@ h1, h2, h3, h4, h5, h6 {
     display: none !important;
   }
   .mobile-toggle {
-    display: block !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
   }
-  .douwan-grid {
-    flex-direction: column !important;
-    align-items: center !important;
+  .clean-card {
+    border-radius: 14px !important;
   }
 }

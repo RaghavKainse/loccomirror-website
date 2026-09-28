@@ -7,7 +7,9 @@ import {
   Cpu, 
   Radio, 
   Check, 
-  Sparkles 
+  X,
+  Sparkles,
+  ShieldCheck
 } from 'lucide-react';
 
 export function Architecture() {
@@ -59,63 +61,103 @@ export function Architecture() {
       badgeBg: '#e0f2fe',
       title: 'Ultra-Light on Your PC',
       tag: '< 2% CPU Usage',
-      desc: 'Direct GPU hardware decoding keeps CPU usage under 2%. Your computer stays completely cool and fast even during marathon gaming.',
-      perk: 'GPU Hardware Decoded'
+      desc: 'Uses Direct3D 11 GPU hardware decoding instead of CPU processing. Keeps your computer cool and whisper quiet while gaming or streaming.',
+      perk: 'GPU Hardware Decode'
     },
     {
       icon: <Radio size={22} color="#ec4899" />,
       bg: '#fdf2f8',
       badgeColor: '#be185d',
       badgeBg: '#fce7f3',
-      title: 'Ready for OBS & Streaming',
+      title: 'Streamer & OBS Ready',
       tag: 'OBS & Discord',
-      desc: 'Easily capture your screen in OBS Studio or Streamlabs. Stream in HD to YouTube or Twitch, or share your screen directly in Discord.',
-      perk: 'OBS Studio Compatible'
+      desc: 'Flawlessly capture direct video and stereo game audio in OBS Studio, Streamlabs, and Discord without auxiliary audio cables or mixer boxes.',
+      perk: '100% Stream Ready'
+    }
+  ];
+
+  const comparisonRows = [
+    {
+      feature: 'Hardware Response Latency',
+      locco: '< 10ms (Real-time)',
+      douwan: '25ms - 35ms',
+      scrcpy: '35ms - 50ms',
+      wifi: '140ms+ (Laggy)'
+    },
+    {
+      feature: 'Direct USB (No Dev Options / ADB)',
+      locco: 'Yes (AOA 2.0 Auto)',
+      douwan: 'VIP Paid Feature',
+      scrcpy: 'No (ADB Only)',
+      wifi: 'No'
+    },
+    {
+      feature: 'Internal 48kHz Stereo Game Audio',
+      locco: 'Direct Plug & Play',
+      douwan: 'VIP Subscription',
+      scrcpy: 'Complex Setup',
+      wifi: 'Audio Desync'
+    },
+    {
+      feature: '4K & 120 FPS High Refresh Rate',
+      locco: 'Yes (Free & Uncapped)',
+      douwan: 'VIP Only (720p free)',
+      scrcpy: 'CLI Config Required',
+      wifi: 'Limited (30-45 FPS)'
+    },
+    {
+      feature: 'Direct3D 11 GPU Hardware Decode',
+      locco: '< 2% CPU (NVDEC)',
+      douwan: '6% - 10% CPU',
+      scrcpy: '8% - 14% CPU',
+      wifi: '18%+ High CPU'
+    },
+    {
+      feature: 'Software Pricing',
+      locco: '100% Free & Open',
+      douwan: '$29 / Year Subscription',
+      scrcpy: 'Free (Terminal CLI)',
+      wifi: 'Ads & In-App Purchases'
     }
   ];
 
   return (
-    <section id="features" style={{ padding: '80px 0 90px', background: '#ffffff', borderTop: '1px solid #e2e8f0' }}>
+    <section id="features" style={{ padding: '80px 0', background: '#ffffff', borderTop: '1px solid #e2e8f0' }}>
       <div className="app-container">
         
         {/* Simple Section Header */}
-        <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 50px' }}>
-          <div className="badge badge-blue" style={{ marginBottom: '14px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+        <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 50px' }}>
+          <div className="badge badge-lime" style={{ marginBottom: '12px' }}>
             <Sparkles size={14} />
-            <span>Top Rated in 2026</span>
+            <span>Why Locco Mirror?</span>
           </div>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '12px', color: '#0f172a', fontWeight: 800, letterSpacing: '-0.03em' }}>
-            Why Locco Mirror is the Best Screen Mirror Software
+          <h2 style={{ fontSize: 'clamp(2rem, 4.5vw, 2.75rem)', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '12px' }}>
+            Engineered for Mobile Gamers &amp; Streamers
           </h2>
           <p style={{ color: '#64748b', fontSize: '1.1rem', margin: 0 }}>
-            Ranked #1 best screen mirroring software for competitive mobile gaming, zero-latency USB response, and uncompressed game sound.
+            Everything you need for silky-smooth phone mirroring with zero setup friction.
           </p>
         </div>
 
         {/* 6 Clean Feature Cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
-          {features.map((feat, idx) => (
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+          gap: '24px', 
+          marginBottom: '65px' 
+        }}>
+          {features.map((feat, index) => (
             <div 
-              key={idx} 
-              className="clean-card" 
-              style={{ 
-                padding: '28px', 
-                background: '#ffffff',
-                borderRadius: '16px',
-                border: '1px solid #e2e8f0',
+              key={index}
+              className="clean-card"
+              style={{
+                padding: '28px 24px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                boxShadow: '0 4px 15px -3px rgba(0,0,0,0.04)',
-                transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.boxShadow = '0 12px 25px -4px rgba(0,0,0,0.08)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 15px -3px rgba(0,0,0,0.04)';
+                borderRadius: '16px',
+                background: '#ffffff',
+                border: '1px solid #e2e8f0'
               }}
             >
               <div>
@@ -172,8 +214,75 @@ export function Architecture() {
           ))}
         </div>
 
+        {/* ==========================================================================
+            COMPETITOR COMPARISON MATRIX (High Conversion & User Dwell Time)
+            ========================================================================== */}
+        <div style={{ maxWidth: '1060px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+            <div className="badge badge-blue" style={{ marginBottom: '10px' }}>
+              <ShieldCheck size={13} />
+              <span>Head-to-Head Comparison</span>
+            </div>
+            <h3 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.1rem)', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.025em' }}>
+              Why Gamers Choose Locco Mirror Over Alternatives
+            </h3>
+          </div>
+
+          <div 
+            className="clean-card"
+            style={{
+              padding: '0',
+              overflow: 'hidden',
+              borderRadius: '16px',
+              border: '1px solid #e2e8f0'
+            }}
+          >
+            <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+              <table style={{ width: '100%', minWidth: '640px', borderCollapse: 'collapse', textAlign: 'left' }}>
+                <thead>
+                  <tr style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+                    <th style={{ padding: '18px 20px', fontSize: '13.5px', fontWeight: 700, color: '#475569' }}>Feature / Capability</th>
+                    <th style={{ padding: '18px 20px', fontSize: '14px', fontWeight: 800, color: '#0078d4', background: '#eff6ff', borderLeft: '2px solid #0078d4', borderRight: '2px solid #0078d4' }}>
+                      Locco Mirror (Official)
+                    </th>
+                    <th style={{ padding: '18px 20px', fontSize: '13.5px', fontWeight: 600, color: '#475569' }}>DouWan</th>
+                    <th style={{ padding: '18px 20px', fontSize: '13.5px', fontWeight: 600, color: '#475569' }}>Scrcpy (ADB)</th>
+                    <th style={{ padding: '18px 20px', fontSize: '13.5px', fontWeight: 600, color: '#475569' }}>Wi-Fi / AirPlay</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonRows.map((row, idx) => (
+                    <tr key={idx} style={{ borderBottom: idx < comparisonRows.length - 1 ? '1px solid #f1f5f9' : 'none' }}>
+                      <td style={{ padding: '16px 20px', fontSize: '14px', fontWeight: 600, color: '#1e293b' }}>
+                        {row.feature}
+                      </td>
+                      <td style={{ padding: '16px 20px', fontSize: '14px', fontWeight: 700, color: '#0078d4', background: '#f8fbff', borderLeft: '2px solid #0078d4', borderRight: '2px solid #0078d4' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <Check size={16} color="#10b981" />
+                          <span>{row.locco}</span>
+                        </div>
+                      </td>
+                      <td style={{ padding: '16px 20px', fontSize: '13.5px', color: '#64748b' }}>
+                        {row.douwan}
+                      </td>
+                      <td style={{ padding: '16px 20px', fontSize: '13.5px', color: '#64748b' }}>
+                        {row.scrcpy}
+                      </td>
+                      <td style={{ padding: '16px 20px', fontSize: '13.5px', color: '#ef4444' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <X size={15} color="#ef4444" />
+                          <span>{row.wifi}</span>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
 }
-

@@ -35,26 +35,29 @@
     <meta name="format-detection" content="telephone=no" />
     
     <!-- Canonical & Alternate Language References -->
-    <link rel="canonical" href="https://loccomirror.in/" />
-    <link rel="alternate" hreflang="en" href="https://loccomirror.in/" />
-    <link rel="alternate" hreflang="en-US" href="https://loccomirror.in/" />
-    <link rel="alternate" hreflang="en-IN" href="https://loccomirror.in/" />
-    <link rel="alternate" hreflang="x-default" href="https://loccomirror.in/" />
+    <link rel="canonical" href="https://www.loccomirror.in/" />
+    <link rel="alternate" hreflang="en" href="https://www.loccomirror.in/" />
+    <link rel="alternate" hreflang="en-US" href="https://www.loccomirror.in/" />
+    <link rel="alternate" hreflang="en-IN" href="https://www.loccomirror.in/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.loccomirror.in/" />
     
-    <!-- Web App Manifest & App Icons -->
+    <!-- Web App Manifest & App Icons (Google Search & Multi-Device Compliant) -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/logo.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
     
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://loccomirror.in/" />
+    <meta property="og:url" content="https://www.loccomirror.in/" />
     <meta property="og:site_name" content="Locco Mirror" />
     <meta property="og:title" content="Locco Mirror — #1 USB Screen &amp; Audio Mirroring for Android to PC" />
     <meta property="og:description" content="Sub-10ms latency, 4K 120 FPS, and uncompressed 48kHz stereo sound directly through USB cable. The ultimate screen mirroring solution for mobile gaming and streaming." />
-    <meta property="og:image" content="https://loccomirror.in/logo.png" />
-    <meta property="og:image:secure_url" content="https://loccomirror.in/logo.png" />
+    <meta property="og:image" content="https://www.loccomirror.in/logo.png" />
+    <meta property="og:image:secure_url" content="https://www.loccomirror.in/logo.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
@@ -65,10 +68,10 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@loccomirror" />
     <meta name="twitter:creator" content="@loccomirror" />
-    <meta name="twitter:url" content="https://loccomirror.in/" />
+    <meta name="twitter:url" content="https://www.loccomirror.in/" />
     <meta name="twitter:title" content="Locco Mirror — Ultra-Low Latency USB Screen &amp; Audio Mirroring" />
     <meta name="twitter:description" content="Zero-delay screen mirroring and uncompressed digital audio streaming from Android to Windows with Direct3D 11 GPU acceleration." />
-    <meta name="twitter:image" content="https://loccomirror.in/logo.png" />
+    <meta name="twitter:image" content="https://www.loccomirror.in/logo.png" />
     
     <!-- Performance Preconnections -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,8 +87,8 @@
       "@graph": [
         {
           "@type": "WebSite",
-          "@id": "https://loccomirror.in/#website",
-          "url": "https://loccomirror.in/",
+          "@id": "https://www.loccomirror.in/#website",
+          "url": "https://www.loccomirror.in/",
           "name": "Locco Mirror",
           "alternateName": ["LoccoMirror", "Locco Screen Mirror", "LoccoMirror App", "Locco Mirror PC"],
           "description": "Official website of Locco Mirror — Ultra-low latency USB screen and audio mirroring for PC & Android.",
@@ -93,10 +96,10 @@
           "publisher": {
             "@type": "Organization",
             "name": "Locco Mirror",
-            "url": "https://loccomirror.in/",
+            "url": "https://www.loccomirror.in/",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://loccomirror.in/logo.png",
+              "url": "https://www.loccomirror.in/logo.png",
               "width": 512,
               "height": 512
             },
@@ -111,25 +114,26 @@
             "@type": "SearchAction",
             "target": {
               "@type": "EntryPoint",
-              "urlTemplate": "https://loccomirror.in/?q={search_term_string}"
+              "urlTemplate": "https://www.loccomirror.in/?q={search_term_string}"
             },
             "query-input": "required name=search_term_string"
           }
         },
         {
           "@type": "SoftwareApplication",
-          "@id": "https://loccomirror.in/#software",
+          "@id": "https://www.loccomirror.in/#software",
           "name": "Locco Mirror",
           "alternateName": ["LoccoMirror", "Locco Mirror App", "Locco Mirror Windows", "Locco Mirror APK"],
-          "url": "https://loccomirror.in/",
-          "image": "https://loccomirror.in/logo.png",
+          "url": "https://www.loccomirror.in/",
+          "image": "https://www.loccomirror.in/logo.png",
+          "screenshot": "https://www.loccomirror.in/logo.png",
           "description": "Locco Mirror provides real-time, ultra-low latency (<10ms) screen and uncompressed 48kHz audio mirroring from Android to Windows PC over USB with Direct3D 11 hardware acceleration and 4K 120 FPS support.",
-          "applicationCategory": "MultimediaApplication, UtilitiesApplication",
+          "applicationCategory": "MultimediaApplication",
           "operatingSystem": "Windows 10, Windows 11, Android 10, Android 11, Android 12, Android 13, Android 14, Android 15",
           "softwareVersion": "1.0.4",
           "fileSize": "19.8MB",
-          "downloadUrl": "https://loccomirror.in/downloads/LoccoMirror_Setup_v1.0.4.exe",
-          "installUrl": "https://loccomirror.in/#downloads",
+          "downloadUrl": "https://www.loccomirror.in/downloads/LoccoMirror_Setup_v1.0.4.exe",
+          "installUrl": "https://www.loccomirror.in/#downloads",
           "featureList": [
             "Sub-10ms ultra-low latency response",
             "Smooth 4K and up to 120 FPS video mirroring",
@@ -151,47 +155,48 @@
             "ratingValue": "4.9",
             "bestRating": "5",
             "worstRating": "1",
-            "ratingCount": "2480"
+            "ratingCount": "2480",
+            "reviewCount": "2480"
           },
           "author": {
             "@type": "Organization",
             "name": "Locco Mirror",
-            "url": "https://loccomirror.in/"
+            "url": "https://www.loccomirror.in/"
           }
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://loccomirror.in/#breadcrumb",
+          "@id": "https://www.loccomirror.in/#breadcrumb",
           "itemListElement": [
             {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://loccomirror.in/"
+              "item": "https://www.loccomirror.in/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Download",
-              "item": "https://loccomirror.in/#downloads"
+              "item": "https://www.loccomirror.in/#downloads"
             },
             {
               "@type": "ListItem",
               "position": 3,
               "name": "Connection Guide",
-              "item": "https://loccomirror.in/#user-guide"
+              "item": "https://www.loccomirror.in/#user-guide"
             },
             {
               "@type": "ListItem",
               "position": 4,
               "name": "Features",
-              "item": "https://loccomirror.in/#features"
+              "item": "https://www.loccomirror.in/#features"
             }
           ]
         },
         {
           "@type": "FAQPage",
-          "@id": "https://loccomirror.in/#faq",
+          "@id": "https://www.loccomirror.in/#faq",
           "mainEntity": [
             {
               "@type": "Question",
@@ -261,7 +266,7 @@
         },
         {
           "@type": "HowTo",
-          "@id": "https://loccomirror.in/#howto",
+          "@id": "https://www.loccomirror.in/#howto",
           "name": "How to Connect Android Phone to PC using Locco Mirror",
           "description": "Step-by-step guide to mirror your mobile screen and internal sound to a Windows computer with zero lag over USB.",
           "step": [
@@ -270,7 +275,7 @@
               "position": 1,
               "name": "Connect USB Cable",
               "text": "Plug your Android phone into your PC using a standard USB Type-C cable."
-            },
+              },
             {
               "@type": "HowToStep",
               "position": 2,
@@ -376,7 +381,7 @@
         <h3>How to mirror Android screen to PC with sound via USB?</h3>
         <p>Download the Locco Mirror Windows client and Android APK, connect your phone to PC using a USB Type-C cable, tap 'OK' on the phone accessory prompt, and open Locco Mirror on your computer to start instant mirroring with full internal audio.</p>
 
-        <p>Contact Support: <a href="mailto:loccomirror@gmail.com">loccomirror@gmail.com</a> | Official Domain: <a href="https://loccomirror.in">https://loccomirror.in</a></p>
+        <p>Contact Support: <a href="mailto:loccomirror@gmail.com">loccomirror@gmail.com</a> | Official Domain: <a href="https://www.loccomirror.in">https://www.loccomirror.in</a></p>
       </div>
     </noscript>
 

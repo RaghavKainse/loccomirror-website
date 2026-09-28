@@ -3,8 +3,10 @@ import './App.css';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Downloads } from './components/Downloads';
-import { Architecture } from './components/Architecture';
+import { TelemetrySimulator } from './components/TelemetrySimulator';
 import { UserGuide } from './components/UserGuide';
+import { Architecture } from './components/Architecture';
+import { Faq } from './components/Faq';
 import { Footer } from './components/Footer';
 import { NotifyModal } from './components/NotifyModal';
 
@@ -35,17 +37,23 @@ export function App() {
 
       {/* Main Single Page Content */}
       <main>
-        {/* Hero Section with Live Mockup */}
+        {/* Hero Section with Interactive Live Mirroring Simulator */}
         <Hero />
 
         {/* Platform Downloads Section (Windows & Android ready, iPhone & Mac COMING SOON) */}
         <Downloads onOpenNotifyModal={handleOpenNotifyModal} />
 
+        {/* Latency & Telemetry Speed Benchmark */}
+        <TelemetrySimulator />
+
         {/* Comprehensive How-To-Use Guide */}
         <UserGuide />
 
-        {/* Core Features & Performance */}
+        {/* Core Features & Head-to-Head Comparison Matrix */}
         <Architecture />
+
+        {/* Frequently Asked Questions */}
+        <Faq />
       </main>
 
       {/* Footer */}

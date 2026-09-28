@@ -3,7 +3,6 @@ import {
   Cable, 
   Zap, 
   Terminal, 
-  Check, 
   Smartphone, 
   Monitor, 
   Sparkles,
@@ -23,7 +22,7 @@ export function UserGuide() {
             <Sparkles size={14} />
             <span>Easy Setup</span>
           </div>
-          <h2 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '10px' }}>
+          <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '10px' }}>
             How to Connect in 3 Simple Steps
           </h2>
           <p style={{ color: '#64748b', fontSize: '1.05rem', margin: 0 }}>
@@ -38,7 +37,10 @@ export function UserGuide() {
             background: '#e2e8f0', 
             padding: '4px', 
             borderRadius: '12px',
-            gap: '4px'
+            gap: '4px',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            maxWidth: '100%'
           }}>
             <button
               onClick={() => setActiveGuide('direct_usb')}

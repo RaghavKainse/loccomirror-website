@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, ShieldCheck, Zap, Monitor, Smartphone } from 'lucide-react';
+import { Mail, ShieldCheck, Zap } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -152,7 +152,7 @@ export function Footer() {
             <span>&copy; {new Date().getFullYear()} <strong style={{ color: '#475569' }}>Locco Mirror</strong>.</span>
             <span>All rights reserved.</span>
             <span>&bull;</span>
-            <a href="https://loccomirror.in" style={{ color: '#0078d4', textDecoration: 'none', fontWeight: 600 }}>
+            <a href="https://www.loccomirror.in" style={{ color: '#0078d4', textDecoration: 'none', fontWeight: 600 }}>
               loccomirror.in
             </a>
           </div>

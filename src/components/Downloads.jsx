@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
 import { 
-  Download, 
-  Smartphone, 
-  Apple, 
   QrCode, 
   ShieldCheck, 
-  Sparkles,
   CheckCircle2,
-  ExternalLink,
-  BookOpen,
-  Laptop
+  BookOpen
 } from 'lucide-react';
 
 // Custom Windows 4-pane Logo
@@ -105,7 +99,7 @@ export function Downloads({ onOpenNotifyModal }) {
         <div 
           className="clean-card"
           style={{ 
-            padding: '48px 40px', 
+            padding: 'clamp(22px, 5vw, 48px)', 
             background: '#ffffff',
             maxWidth: '1060px',
             margin: '0 auto',
@@ -121,7 +115,7 @@ export function Downloads({ onOpenNotifyModal }) {
             }}
           >
             {/* Left Column: App Icon Box matching DouWan */}
-            <div style={{ textAlign: 'center', minWidth: '130px' }}>
+            <div style={{ textAlign: 'center', minWidth: '120px' }}>
               <div className="douwan-app-box" style={{ margin: '0 auto 10px auto' }}>
                 <img src="/logo.png" alt="Locco Mirror" />
               </div>
@@ -135,12 +129,12 @@ export function Downloads({ onOpenNotifyModal }) {
               
               {/* CATEGORY 1: DESKTOP */}
               <div style={{ marginBottom: '40px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '10px' }}>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#1e293b' }}>
                     Locco Mirror · Desktop
                   </h3>
                   <div style={{ display: 'flex', gap: '12px', fontSize: '13.5px', color: '#64748b' }}>
-                    <a href="#user-guide" style={{ color: '#64748b', textDecoration: 'none' }}>Features</a>
+                    <a href="#features" style={{ color: '#64748b', textDecoration: 'none' }}>Features</a>
                     <span>|</span>
                     <a href="#user-guide" style={{ color: '#0078d4', textDecoration: 'none', fontWeight: 600 }}>Connection Guide</a>
                   </div>
@@ -181,7 +175,7 @@ export function Downloads({ onOpenNotifyModal }) {
 
               {/* CATEGORY 2: MOBILE RECEIVER / COMPANION */}
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '10px' }}>
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#1e293b' }}>
                     Locco Mirror · Mobile Companion
                   </h3>

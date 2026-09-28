@@ -35,8 +35,9 @@ export function TelemetrySimulator() {
               position: 'relative'
             }}
           >
-            <div style={{ position: 'absolute', top: '-12px', left: '24px', background: '#0078d4', color: '#ffffff', fontSize: '11px', fontWeight: 700, padding: '3px 12px', borderRadius: '999px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Fastest (Recommended)
+            <div style={{ position: 'absolute', top: '-12px', left: '24px', background: '#0078d4', color: '#ffffff', fontSize: '11px', fontWeight: 700, padding: '3px 12px', borderRadius: '999px', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <Zap size={12} fill="#ffffff" />
+              <span>Fastest (Recommended)</span>
             </div>
 
             <div style={{ fontSize: '15px', fontWeight: 700, color: '#1e293b', marginBottom: '8px' }}>

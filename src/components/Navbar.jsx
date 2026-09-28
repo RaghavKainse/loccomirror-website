@@ -21,7 +21,9 @@ export function Navbar({ onDownloadClick }) {
         left: 0,
         right: 0,
         height: '70px',
-        backgroundColor: '#ffffff',
+        backgroundColor: 'rgba(255, 255, 255, 0.92)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
         borderBottom: '1px solid #e2e8f0',
         boxShadow: scrolled ? '0 4px 20px -2px rgba(0, 0, 0, 0.05)' : 'none',
         zIndex: 100,
@@ -76,10 +78,15 @@ export function Navbar({ onDownloadClick }) {
 
         {/* Desktop Navigation Links */}
         <nav className="desktop-nav">
-          <ul style={{ display: 'flex', alignItems: 'center', gap: '28px', listStyle: 'none', margin: 0, padding: 0 }}>
+          <ul style={{ display: 'flex', alignItems: 'center', gap: '26px', listStyle: 'none', margin: 0, padding: 0 }}>
             <li>
               <a href="#downloads" style={{ textDecoration: 'none', color: '#0078d4', fontSize: '14.5px', fontWeight: 600 }}>
                 Download
+              </a>
+            </li>
+            <li>
+              <a href="#telemetry" style={{ textDecoration: 'none', color: '#475569', fontSize: '14.5px', fontWeight: 500 }}>
+                Speed &amp; Latency
               </a>
             </li>
             <li>
@@ -90,6 +97,11 @@ export function Navbar({ onDownloadClick }) {
             <li>
               <a href="#features" style={{ textDecoration: 'none', color: '#475569', fontSize: '14.5px', fontWeight: 500 }}>
                 Features
+              </a>
+            </li>
+            <li>
+              <a href="#faq" style={{ textDecoration: 'none', color: '#475569', fontSize: '14.5px', fontWeight: 500 }}>
+                FAQ
               </a>
             </li>
           </ul>
@@ -137,19 +149,22 @@ export function Navbar({ onDownloadClick }) {
             top: '70px',
             left: 0,
             right: 0,
-            background: '#ffffff',
+            background: 'rgba(255, 255, 255, 0.98)',
+            backdropFilter: 'blur(16px)',
             borderBottom: '1px solid #e2e8f0',
             padding: '24px',
             display: 'flex',
             flexDirection: 'column',
             gap: '16px',
             zIndex: 99,
-            boxShadow: '0 10px 20px rgba(0,0,0,0.05)'
+            boxShadow: '0 10px 25px rgba(0,0,0,0.08)'
           }}
         >
-          <a href="#downloads" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none', color: '#0078d4', fontWeight: 600 }}>Download</a>
-          <a href="#user-guide" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none', color: '#334155' }}>Connection Guide</a>
-          <a href="#features" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none', color: '#334155' }}>Features</a>
+          <a href="#downloads" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none', color: '#0078d4', fontWeight: 600, fontSize: '15px' }}>Download Client</a>
+          <a href="#telemetry" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none', color: '#334155', fontWeight: 500, fontSize: '15px' }}>Speed &amp; Latency</a>
+          <a href="#user-guide" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none', color: '#334155', fontWeight: 500, fontSize: '15px' }}>Connection Guide</a>
+          <a href="#features" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none', color: '#334155', fontWeight: 500, fontSize: '15px' }}>Core Features</a>
+          <a href="#faq" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none', color: '#334155', fontWeight: 500, fontSize: '15px' }}>FAQ</a>
         </div>
       )}
     </header>
