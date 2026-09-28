@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import './App.css';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Downloads } from './components/Downloads';
-import { TelemetrySimulator } from './components/TelemetrySimulator';
-import { UserGuide } from './components/UserGuide';
-import { Architecture } from './components/Architecture';
-import { Faq } from './components/Faq';
+import { DualProductHighlight } from './components/DualProductHighlight';
+import { StatBar } from './components/StatBar';
+import { CoreFeatures } from './components/CoreFeatures';
+import { CameraCallout } from './components/CameraCallout';
+import { PerformanceGrid } from './components/PerformanceGrid';
+import { FaqAccordion } from './components/FaqAccordion';
+import { DownloadCenter } from './components/DownloadCenter';
+import { CtaBanner } from './components/CtaBanner';
 import { Footer } from './components/Footer';
 import { NotifyModal } from './components/NotifyModal';
 
@@ -31,35 +34,44 @@ export function App() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc' }}>
-      {/* Navigation */}
-      <Navbar />
+    <div className="app-root">
+      {/* 1. Header / Navigation */}
+      <Navbar onDownloadClick={() => {}} />
 
-      {/* Main Single Page Content */}
-      <main>
-        {/* Hero Section with Interactive Live Mirroring Simulator */}
-        <Hero />
+      {/* Main Content Sections */}
+      <main className="app-main">
+        {/* 2. Hero Section with 4K Studio Simulator & Quick Specs */}
+        <Hero onOpenNotifyModal={handleOpenNotifyModal} />
 
-        {/* Platform Downloads Section (Windows & Android ready, iPhone & Mac COMING SOON) */}
-        <Downloads onOpenNotifyModal={handleOpenNotifyModal} />
+        {/* 3. Dual Product Highlight: Locco Screen Mirroring + Locco 4K Camera */}
+        <DualProductHighlight />
 
-        {/* Latency & Telemetry Speed Benchmark */}
-        <TelemetrySimulator />
+        {/* 4. Stat Bar: 4K UHD, 120 FPS, <10ms, 128 Devices */}
+        <StatBar />
 
-        {/* Comprehensive How-To-Use Guide */}
-        <UserGuide />
+        {/* 5. Core Features Grid: 8 Feature Cards */}
+        <CoreFeatures />
 
-        {/* Core Features & Head-to-Head Comparison Matrix */}
-        <Architecture />
+        {/* 6. Locco Camera Engine Spotlight */}
+        <CameraCallout />
 
-        {/* Frequently Asked Questions */}
-        <Faq />
+        {/* 7. Unmatched Performance: 6 Capability Cards */}
+        <PerformanceGrid />
+
+        {/* 8. Frequently Asked Questions */}
+        <FaqAccordion />
+
+        {/* 9. Multi-Platform Download Center */}
+        <DownloadCenter onOpenNotifyModal={handleOpenNotifyModal} />
+
+        {/* 10. Gradient Call To Action Banner */}
+        <CtaBanner />
       </main>
 
-      {/* Footer */}
+      {/* 11. Footer */}
       <Footer />
 
-      {/* iPhone & Mac Coming Soon Waitlist Modal */}
+      {/* 12. Notification Modal for Coming Soon Platforms */}
       <NotifyModal
         isOpen={notifyModal.isOpen}
         onClose={handleCloseNotifyModal}

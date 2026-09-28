@@ -1,170 +1,127 @@
-import React, { useState, useEffect } from 'react';
-import { Download, Menu, X, BookOpen } from 'lucide-react';
+import React, { useState } from 'react';
 
 export function Navbar({ onDownloadClick }) {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 15);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const navLinks = [
+    { label: 'Locco', href: '#about' },
+    { label: 'Features', href: '#features' },
+    { label: 'Camera & Mirror', href: '#camera-features' },
+    { label: 'Performance', href: '#pricing' },
+    { label: 'FAQ', href: '#faq' },
+  ];
+
+  const handleLinkClick = (e, href) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <header
-      style={{
-        position: 'sticky',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: '70px',
-        backgroundColor: 'rgba(255, 255, 255, 0.92)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
-        borderBottom: '1px solid #e2e8f0',
-        boxShadow: scrolled ? '0 4px 20px -2px rgba(0, 0, 0, 0.05)' : 'none',
-        zIndex: 100,
-        transition: 'all 0.2s ease',
-      }}
-    >
-      <div 
-        className="app-container" 
-        style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'space-between', 
-          height: '100%' 
-        }}
-      >
-        {/* Brand Logo */}
-        <a 
-          href="#" 
-          style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '12px', 
-            textDecoration: 'none', 
-            color: '#0f172a' 
-          }}
-        >
-          <img 
-            src="/logo.png" 
-            alt="Locco Mirror Logo" 
-            style={{ width: '34px', height: '34px', borderRadius: '8px', objectFit: 'contain' }}
-          />
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem' }}>
-              Locco Mirror
-            </span>
-            <span 
-              style={{ 
-                fontSize: '11px', 
-                fontFamily: 'var(--font-mono)', 
-                background: '#eff6ff', 
-                color: '#1d4ed8', 
-                border: '1px solid #bfdbfe', 
-                padding: '2px 8px', 
-                borderRadius: '999px',
-                fontWeight: 600
-              }}
-            >
-              v1.0.4
-            </span>
+    <header className="navbar-root">
+      <div className="container-max navbar-container">
+        {/* Left: Brand Logo & Links */}
+        <div className="navbar-left">
+          <a href="#" className="navbar-brand" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+            <img src="/logo.png" alt="Locco Mirror Logo" className="navbar-logo-img" />
+            <span className="navbar-logo-text">Locco Mirror</span>
+            <span className="navbar-badge">v2.4</span>
+          </a>
+
+          {/* Desktop Nav Links */}
+          <nav className="navbar-desktop-nav" aria-label="Main Navigation">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="navbar-link"
+                onClick={(e) => handleLinkClick(e, link.href)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        {/* Right: Actions */}
+        <div className="navbar-right">
+          <div className="navbar-lang-pill" title="Current Language">
+            <span className="material-symbols-outlined icon-18">language</span>
+            <span>EN</span>
           </div>
-        </a>
 
-        {/* Desktop Navigation Links */}
-        <nav className="desktop-nav">
-          <ul style={{ display: 'flex', alignItems: 'center', gap: '26px', listStyle: 'none', margin: 0, padding: 0 }}>
-            <li>
-              <a href="#downloads" style={{ textDecoration: 'none', color: '#0078d4', fontSize: '14.5px', fontWeight: 600 }}>
-                Download
-              </a>
-            </li>
-            <li>
-              <a href="#telemetry" style={{ textDecoration: 'none', color: '#475569', fontSize: '14.5px', fontWeight: 500 }}>
-                Speed &amp; Latency
-              </a>
-            </li>
-            <li>
-              <a href="#user-guide" style={{ textDecoration: 'none', color: '#475569', fontSize: '14.5px', fontWeight: 500 }}>
-                Connection Guide
-              </a>
-            </li>
-            <li>
-              <a href="#features" style={{ textDecoration: 'none', color: '#475569', fontSize: '14.5px', fontWeight: 500 }}>
-                Features
-              </a>
-            </li>
-            <li>
-              <a href="#faq" style={{ textDecoration: 'none', color: '#475569', fontSize: '14.5px', fontWeight: 500 }}>
-                FAQ
-              </a>
-            </li>
-          </ul>
-        </nav>
-
-        {/* CTA Actions */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <a
-            href="#user-guide"
-            className="btn btn-secondary nav-btn-guide"
-            style={{ padding: '8px 16px', fontSize: '13.5px' }}
+            href="#download"
+            className="navbar-changelog-link"
+            onClick={(e) => handleLinkClick(e, '#download')}
           >
-            <BookOpen size={15} color="#0078d4" />
-            <span>How to Use</span>
+            Changelog
           </a>
 
           <a
-            href="#downloads"
+            href="#download"
+            className="navbar-cta-btn"
             onClick={(e) => {
-              if (onDownloadClick) onDownloadClick(e);
+              e.preventDefault();
+              if (onDownloadClick) onDownloadClick();
+              const target = document.querySelector('#download');
+              if (target) target.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="btn btn-primary"
-            style={{ padding: '9px 20px', fontSize: '14px', background: '#0078d4' }}
           >
-            <Download size={16} />
-            <span>Download</span>
+            Download Free
           </a>
 
-          {/* Mobile hamburger */}
+          <div className="navbar-avatar" title="Account">
+            <span className="material-symbols-outlined icon-18">person</span>
+          </div>
+
+          {/* Mobile Hamburger Toggle */}
           <button
+            type="button"
+            className="navbar-mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-            className="mobile-toggle"
+            aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <span className="material-symbols-outlined">
+              {mobileMenuOpen ? 'close' : 'menu'}
+            </span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '70px',
-            left: 0,
-            right: 0,
-            background: 'rgba(255, 255, 255, 0.98)',
-            backdropFilter: 'blur(16px)',
-            borderBottom: '1px solid #e2e8f0',
-            padding: '24px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '16px',
-            zIndex: 99,
-            boxShadow: '0 10px 25px rgba(0,0,0,0.08)'
-          }}
-        >
-          <a href="#downloads" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none', color: '#0078d4', fontWeight: 600, fontSize: '15px' }}>Download Client</a>
-          <a href="#telemetry" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none', color: '#334155', fontWeight: 500, fontSize: '15px' }}>Speed &amp; Latency</a>
-          <a href="#user-guide" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none', color: '#334155', fontWeight: 500, fontSize: '15px' }}>Connection Guide</a>
-          <a href="#features" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none', color: '#334155', fontWeight: 500, fontSize: '15px' }}>Core Features</a>
-          <a href="#faq" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none', color: '#334155', fontWeight: 500, fontSize: '15px' }}>FAQ</a>
+        <div className="navbar-mobile-drawer">
+          <div className="navbar-mobile-links">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="navbar-mobile-link"
+                onClick={(e) => handleLinkClick(e, link.href)}
+              >
+                {link.label}
+              </a>
+            ))}
+            <div className="navbar-mobile-divider" />
+            <a
+              href="#download"
+              className="navbar-mobile-cta"
+              onClick={(e) => {
+                e.preventDefault();
+                setMobileMenuOpen(false);
+                if (onDownloadClick) onDownloadClick();
+                const target = document.querySelector('#download');
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              <span className="material-symbols-outlined icon-18">download</span>
+              Download Free Client
+            </a>
+          </div>
         </div>
       )}
     </header>
