@@ -50,8 +50,8 @@ export function Hero({ onOpenNotifyModal }) {
             {/* Action Buttons */}
             <div className="hero-actions">
               <a
-                href="/downloads/LoccoMirror_Setup_v1.0.5.exe"
-                download="LoccoMirror_Setup_v1.0.5.exe"
+                href="/downloads/LoccoMirror_Setup_v1.0.6.exe"
+                download="LoccoMirror_Setup_v1.0.6.exe"
                 className="btn-primary"
                 onClick={handleDownloadWindows}
               >

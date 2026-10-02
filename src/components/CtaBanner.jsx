@@ -26,8 +26,8 @@ export function CtaBanner() {
 
           <div className="cta-banner-actions">
             <a
-              href="/downloads/LoccoMirror_Setup_v1.0.5.exe"
-              download="LoccoMirror_Setup_v1.0.5.exe"
+              href="/downloads/LoccoMirror_Setup_v1.0.6.exe"
+              download="LoccoMirror_Setup_v1.0.6.exe"
               className="btn-cta-white"
               onClick={handleDownload}
             >
