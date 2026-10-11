@@ -420,6 +420,144 @@
   color: var(--primary);
 }
 
+/* ==========================================================================
+   SIMPLE HERO ACTIONS & DUAL BUTTONS (WINDOWS 64-BIT + ANDROID APK)
+   ========================================================================== */
+.hero-simple-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+}
+
+.hero-simple-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 700;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.hero-simple-btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-win-simple {
+  background: linear-gradient(135deg, #0052d1 0%, #1769ff 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 20px -2px rgba(0, 82, 209, 0.35);
+}
+
+.btn-win-simple:hover {
+  box-shadow: 0 10px 26px -2px rgba(0, 82, 209, 0.45);
+}
+
+.btn-apk-simple {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 20px -2px rgba(16, 185, 129, 0.35);
+}
+
+.btn-apk-simple:hover {
+  box-shadow: 0 10px 26px -2px rgba(16, 185, 129, 0.45);
+}
+
+.btn-main-txt {
+  line-height: 1;
+}
+
+.btn-arch-tag {
+  font-size: 11px;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.btn-arch-tag.apk-tag {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.hero-file-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  margin-top: -4px;
+}
+
+.meta-sep {
+  opacity: 0.4;
+}
+
+.meta-free {
+  color: #059669;
+  font-weight: 600;
+}
+
+/* Simple 1-Line User Trust Bar */
+.hero-simple-trust {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 10px 14px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 82, 209, 0.12);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(13, 27, 53, 0.03);
+  width: 100%;
+}
+
+.trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--on-surface);
+}
+
+.trust-stars-mini {
+  display: inline-flex;
+  align-items: center;
+}
+
+.text-emerald {
+  color: #059669;
+}
+
+.text-blue {
+  color: #0052d1;
+}
+
+@media (max-width: 600px) {
+  .hero-simple-actions {
+    flex-direction: column;
+  }
+  .hero-simple-btn {
+    width: 100%;
+  }
+  .hero-simple-trust {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
 .hero-specs-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1889,7 +2027,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  gap: 8px;
+  padding: 12px 22px;
   border-radius: var(--radius-md);
   background-color: #ffffff;
   color: var(--primary);
@@ -1897,12 +2036,50 @@
   font-weight: 700;
   text-decoration: none;
   box-shadow: var(--shadow-md);
-  transition: all 0.15s ease;
+  transition: all 0.18s ease;
 }
 
 .btn-cta-white:hover {
   background-color: var(--surface-container-low);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-cta-green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.18s ease;
+}
+
+.btn-cta-green:hover {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.45);
+}
+
+.cta-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
 
 .btn-cta-ghost {

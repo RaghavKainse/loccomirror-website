@@ -64,6 +64,7 @@ export function Navbar({ onDownloadClick }) {
           <a
             href="#download"
             className="navbar-cta-btn"
+            title="Download Locco Mirror Windows (64-bit) & Android"
             onClick={(e) => {
               e.preventDefault();
               if (onDownloadClick) onDownloadClick();
@@ -71,7 +72,7 @@ export function Navbar({ onDownloadClick }) {
               if (target) target.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            Download Free
+            Download Free (64-bit)
           </a>
 
           <div className="navbar-avatar" title="Account">

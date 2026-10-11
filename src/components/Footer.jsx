@@ -62,8 +62,8 @@ export function Footer() {
             <div className="font-label-lg footer-col-title">Downloads</div>
             <ul className="footer-link-list">
               <li>
-                <a href="/downloads/LoccoMirror_Setup_v1.0.6.exe" download="LoccoMirror_Setup_v1.0.6.exe">
-                  Windows x64 / ARM
+                <a href="/downloads/LoccoMirror_Setup_v1.0.6.exe" download="LoccoMirror_Setup_v1.0.6.exe" title="Download Locco Mirror for Windows (64-bit)">
+                  Windows 64-bit (v1.0.6)
                 </a>
               </li>
               <li>
@@ -72,8 +72,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/downloads/LoccoMirror.apk" download="LoccoMirror.apk">
-                  Android Companion
+                <a href="/downloads/LoccoMirror.apk" download="LoccoMirror.apk" title="Download Locco Mirror Android APK">
+                  Android APK (v1.0.6)
                 </a>
               </li>
               <li>
