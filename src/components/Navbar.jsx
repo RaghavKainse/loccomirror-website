@@ -7,6 +7,7 @@ export function Navbar({ onDownloadClick }) {
     { label: 'Locco', href: '#about' },
     { label: 'Features', href: '#features' },
     { label: 'Camera & Mirror', href: '#camera-features' },
+    { label: 'Install Guide', href: '#install-guide' },
     { label: 'Performance', href: '#pricing' },
     { label: 'FAQ', href: '#faq' },
   ];

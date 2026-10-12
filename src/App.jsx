@@ -9,6 +9,7 @@ import { CameraCallout } from './components/CameraCallout';
 import { PerformanceGrid } from './components/PerformanceGrid';
 import { FaqAccordion } from './components/FaqAccordion';
 import { DownloadCenter } from './components/DownloadCenter';
+import { InstallGuide } from './components/InstallGuide';
 import { CtaBanner } from './components/CtaBanner';
 import { Footer } from './components/Footer';
 import { NotifyModal } from './components/NotifyModal';
@@ -64,7 +65,10 @@ export function App() {
         {/* 9. Multi-Platform Download Center */}
         <DownloadCenter onOpenNotifyModal={handleOpenNotifyModal} />
 
-        {/* 10. Gradient Call To Action Banner */}
+        {/* 10. Windows Installation Guide (SmartScreen Bypass) */}
+        <InstallGuide />
+
+        {/* 11. Gradient Call To Action Banner */}
         <CtaBanner />
       </main>
 

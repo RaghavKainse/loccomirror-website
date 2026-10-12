@@ -168,9 +168,11 @@ export function DownloadCenter({ onOpenNotifyModal }) {
                     </h3>
                   </div>
                   <div className="platform-category-links">
-                    <a href="#features" className="cat-link">Features</a>
+                    <a href="#install-guide" className="cat-link cat-link-accent">
+                      🛡️ Windows Install Guide
+                    </a>
                     <span className="cat-divider">|</span>
-                    <a href="#faq" className="cat-link cat-link-accent">Connection Guide</a>
+                    <a href="#faq" className="cat-link">Connection Guide</a>
                   </div>
                 </div>
 
@@ -349,10 +351,13 @@ export function DownloadCenter({ onOpenNotifyModal }) {
               </span>
             </div>
             <div className="banner-right-links">
+              <a href="#install-guide" className="instructions-link" style={{ background: '#0052d1', color: '#ffffff', padding: '6px 12px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600 }}>
+                <span>🛡️ Windows Install Guide</span>
+                <ArrowRight size={14} />
+              </a>
               <span className="trust-pill">100% Offline Capable</span>
-              <span className="trust-pill">Direct USB AOA</span>
               <a href="#faq" className="instructions-link">
-                <span>View Connection Steps</span>
+                <span>Connection Steps</span>
                 <ArrowRight size={14} />
               </a>
             </div>
