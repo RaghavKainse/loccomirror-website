@@ -34,14 +34,14 @@ export function CtaBanner() {
 
           <div className="cta-banner-actions">
             <a
-              href="/downloads/LoccoMirror_Setup_v1.0.6.exe"
-              download="LoccoMirror_Setup_v1.0.6.exe"
+              href="/downloads/LoccoMirror_Setup_v1.0.6.zip"
+              download="LoccoMirror_Setup_v1.0.6.zip"
               className="btn-cta-white"
               onClick={() => handleDownload('windows')}
-              title="Download Windows 64-bit installer"
+              title="Download Windows 64-bit package (.zip)"
             >
               <WindowsIcon size={20} color="#0052d1" />
-              <span>Download Windows (64-bit)</span>
+              <span>Download Windows (.ZIP)</span>
             </a>
 
             <a

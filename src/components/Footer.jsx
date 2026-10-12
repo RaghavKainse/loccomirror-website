@@ -62,8 +62,8 @@ export function Footer() {
             <div className="font-label-lg footer-col-title">Downloads</div>
             <ul className="footer-link-list">
               <li>
-                <a href="/downloads/LoccoMirror_Setup_v1.0.6.exe" download="LoccoMirror_Setup_v1.0.6.exe" title="Download Locco Mirror for Windows (64-bit)">
-                  Windows 64-bit (v1.0.6)
+                <a href="/downloads/LoccoMirror_Setup_v1.0.6.zip" download="LoccoMirror_Setup_v1.0.6.zip" title="Download Locco Mirror for Windows (.zip)">
+                  Windows 64-bit (.ZIP)
                 </a>
               </li>
               <li>

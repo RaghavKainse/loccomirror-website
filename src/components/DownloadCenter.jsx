@@ -46,7 +46,7 @@ export function DownloadCenter({ onOpenNotifyModal }) {
   const [downloadToast, setDownloadToast] = useState(null);
 
   // Exact file paths for direct download
-  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.6.exe";
+  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.6.zip";
   const ANDROID_APK_URL = "/downloads/LoccoMirror.apk";
   const ANDROID_DIRECT_LINK = typeof window !== 'undefined' 
     ? `${window.location.origin}/downloads/LoccoMirror.apk`
@@ -178,20 +178,20 @@ export function DownloadCenter({ onOpenNotifyModal }) {
                   {/* Windows 64-bit Button (DOWNLOADABLE) */}
                   <a
                     href={WINDOWS_EXE_URL}
-                    download="LoccoMirror_Setup_v1.0.6.exe"
-                    onClick={() => handleDownload('windows', 'LoccoMirror_Setup_v1.0.6.exe', '20.8 MB')}
+                    download="LoccoMirror_Setup_v1.0.6.zip"
+                    onClick={() => handleDownload('windows', 'LoccoMirror_Setup_v1.0.6.zip', '20.6 MB')}
                     className="douwan-platform-btn btn-windows"
-                    title="Download Locco Mirror for Windows 11 / 10"
+                    title="Download Locco Mirror for Windows 11 / 10 (.zip)"
                   >
                     <div className="btn-icon-box">
                       <WindowsIcon size={24} color="#ffffff" />
                     </div>
                     <div className="btn-label-group">
                       <div className="btn-main-label">
-                        Windows 64-bit <span className="btn-version-pill">v1.0.6</span>
+                        Windows 64-bit (.ZIP) <span className="btn-version-pill">v1.0.6</span>
                       </div>
                       <div className="btn-sub-label">
-                        Windows 11 &amp; 10 • Direct .EXE (20.8 MB)
+                        Windows 11 &amp; 10 • SmartScreen Safe (20.6 MB)
                       </div>
                     </div>
                     <div className="btn-download-action">

@@ -6,7 +6,7 @@ import { WindowsIcon, AndroidIcon } from './icons/PlatformIcons';
 export function Hero({ onOpenNotifyModal }) {
   const [activeFps, setActiveFps] = useState(120);
 
-  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.6.exe";
+  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.6.zip";
   const ANDROID_APK_URL = "/downloads/LoccoMirror.apk";
 
   const triggerConfetti = (platform) => {
@@ -54,14 +54,14 @@ export function Hero({ onOpenNotifyModal }) {
               {/* Windows 64-bit Download Button */}
               <a
                 href={WINDOWS_EXE_URL}
-                download="LoccoMirror_Setup_v1.0.6.exe"
+                download="LoccoMirror_Setup_v1.0.6.zip"
                 className="hero-simple-btn btn-win-simple"
                 onClick={() => triggerConfetti('windows')}
-                title="Download Locco Mirror for Windows (64-bit)"
+                title="Download Locco Mirror for Windows (64-bit .zip)"
               >
                 <WindowsIcon size={20} color="#ffffff" />
                 <span className="btn-main-txt">Download for Windows</span>
-                <span className="btn-arch-tag">64-bit</span>
+                <span className="btn-arch-tag">64-bit .ZIP</span>
               </a>
 
               {/* Android APK Download Button */}
