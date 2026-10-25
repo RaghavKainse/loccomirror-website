@@ -2274,101 +2274,44 @@
   box-shadow: 0 2px 10px rgba(0, 82, 209, 0.06);
 }
 
-.install-steps-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  margin-top: 48px;
-  margin-bottom: 56px;
-}
-
-.install-step-card {
-  background: #ffffff;
-  border: 1px solid rgba(13, 27, 53, 0.08);
-  border-radius: 20px;
-  padding: 28px;
-  box-shadow: 0 10px 30px rgba(13, 27, 53, 0.04), 0 1px 3px rgba(13, 27, 53, 0.02);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.install-step-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0, 82, 209, 0.1), 0 2px 6px rgba(13, 27, 53, 0.04);
-  border-color: rgba(0, 82, 209, 0.25);
-}
-
-.install-step-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-
-.install-step-num-badge {
-  background: linear-gradient(135deg, var(--primary) 0%, #1769ff 100%);
-  color: #ffffff;
-  padding: 6px 12px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.02em;
-  box-shadow: 0 4px 12px rgba(0, 82, 209, 0.25);
-  white-space: nowrap;
-}
-
-.install-step-heading-group {
-  flex: 1;
-}
-
-.install-step-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--on-surface);
-  margin-bottom: 4px;
-}
-
-.install-step-sub {
-  font-size: 13.5px;
-  color: #64748b;
-  font-weight: 500;
-}
-
-/* Image Mockup Wrapper */
-.install-image-wrapper {
-  background: #0f172a;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
-  cursor: pointer;
+/* Interactive Video Showcase Player */
+.install-video-showcase {
+  max-width: 960px;
+  margin: 40px auto 52px;
   position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 22px;
 }
 
-.install-image-wrapper:hover {
-  box-shadow: 0 12px 32px rgba(0, 82, 209, 0.25);
+.install-video-card {
+  background: #0f172a;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 82, 209, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.install-window-bar {
+.install-video-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 60px rgba(0, 82, 209, 0.22), 0 0 0 1px rgba(0, 82, 209, 0.3);
+}
+
+.install-video-header {
   background: #1e293b;
-  padding: 8px 14px;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.install-dots {
+.install-video-dots {
   display: flex;
-  gap: 6px;
+  gap: 7px;
 }
 
-.install-dots .dot {
-  width: 9px;
-  height: 9px;
+.install-video-dots .dot {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
 }
 
@@ -2376,128 +2319,121 @@
 .dot-min { background: #f59e0b; }
 .dot-max { background: #10b981; }
 
-.install-window-title {
-  font-size: 11px;
+.install-video-badge-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e2e8f0;
+  font-size: 13px;
   font-weight: 600;
-  color: #94a3b8;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
-.install-zoom-hint {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+.install-video-badge-title svg {
+  color: #ef4444;
+}
+
+.install-video-quality {
   font-size: 11px;
-  color: #94a3b8;
-  opacity: 0.8;
-  transition: opacity 0.15s ease;
-}
-
-.install-image-wrapper:hover .install-zoom-hint {
-  opacity: 1;
+  font-weight: 700;
   color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
 }
 
-.install-img-container {
+/* 16:9 Aspect Ratio Container */
+.install-video-frame-container {
   position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  background: #000000;
+  overflow: hidden;
+}
+
+.install-video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Video Footer */
+.install-video-footer {
   background: #0b1329;
+  padding: 16px 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 16px;
-  min-height: 290px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.install-step-screenshot {
-  max-width: 100%;
-  max-height: 270px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-  display: block;
-  transition: transform 0.2s ease;
+.install-video-creator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
 }
 
-.install-image-wrapper:hover .install-step-screenshot {
-  transform: scale(1.015);
+.install-video-creator .creator-label {
+  color: #64748b;
 }
 
-/* Callout Pointer Badges */
-.install-pointer-badge {
-  position: absolute;
+.install-video-creator .creator-name {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.install-video-chapters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.video-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  font-size: 12px;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.video-chip svg {
+  color: #10b981;
+}
+
+.install-video-yt-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #ffffff;
-  z-index: 10;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(8px);
-}
-
-.badge-step-1 {
-  bottom: 28px;
-  left: 28px;
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
-}
-
-.badge-step-2 {
-  bottom: 28px;
-  right: 28px;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
-}
-
-.pointer-pulse {
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  border-radius: 999px;
-  border: 2px solid rgba(255, 255, 255, 0.6);
-  animation: pointerPulse 2s infinite ease-out;
-  pointer-events: none;
-}
-
-@keyframes pointerPulse {
-  0% { transform: scale(0.96); opacity: 0.9; }
-  50% { transform: scale(1.08); opacity: 0.3; }
-  100% { transform: scale(1.15); opacity: 0; }
-}
-
-.install-step-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.install-step-desc {
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: #334155;
-  margin-bottom: 16px;
-}
-
-.install-step-action-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  background: rgba(16, 185, 129, 0.08);
-  color: #065f46;
+  padding: 7px 14px;
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.25);
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 600;
-  border: 1px solid rgba(16, 185, 129, 0.16);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.install-video-yt-link:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
 }
 
 /* Trust Bar */
@@ -2715,82 +2651,6 @@
   transform: translateY(-2px);
 }
 
-/* Lightbox Modal */
-.install-lightbox-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(13, 27, 53, 0.85);
-  backdrop-filter: blur(8px);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  animation: fadeIn 0.2s ease;
-}
-
-.install-lightbox-modal {
-  background: #0f172a;
-  border-radius: 16px;
-  max-width: 580px;
-  width: 100%;
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.install-lightbox-close {
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: #ffffff;
-  font-size: 24px;
-  line-height: 1;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.15s ease;
-}
-
-.install-lightbox-close:hover {
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.install-lightbox-img {
-  max-width: 100%;
-  max-height: 65vh;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-  margin-top: 10px;
-}
-
-.install-lightbox-caption {
-  margin-top: 16px;
-  color: #94a3b8;
-  font-size: 13px;
-  font-weight: 500;
-  text-align: center;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 /* Responsiveness */
 @media (max-width: 1024px) {
   .install-trust-grid {
@@ -2799,9 +2659,21 @@
 }
 
 @media (max-width: 768px) {
-  .install-steps-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .install-video-showcase {
+    margin: 28px 0 36px;
+  }
+  .install-video-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 12px;
+  }
+  .install-video-chapters {
+    width: 100%;
+  }
+  .install-video-yt-link {
+    width: 100%;
+    justify-content: center;
   }
   .install-trust-grid {
     grid-template-columns: 1fr;

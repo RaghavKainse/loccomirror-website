@@ -1,49 +1,26 @@
 import React, { useState } from 'react';
 import { 
+  Play, 
   ShieldCheck, 
-  ShieldAlert, 
-  Info, 
   CheckCircle2, 
-  MousePointerClick, 
-  Download, 
-  FileArchive, 
   ExternalLink, 
   Lock, 
   Sparkles,
+  Info,
   HelpCircle,
   ChevronDown,
-  ArrowRight,
-  Maximize2
+  Download,
+  FileArchive
 } from 'lucide-react';
 
 export function InstallGuide() {
-  const [selectedImage, setSelectedImage] = useState(null);
   const [activeFaq, setActiveFaq] = useState(null);
 
-  const steps = [
-    {
-      stepNumber: '01',
-      title: 'Click "More info"',
-      subtitle: 'On the blue Windows Defender SmartScreen window',
-      desc: 'When you launch the setup file, Microsoft Defender SmartScreen displays a blue notification window. This is completely standard for newly published software. Simply click the underlined "More info" link.',
-      image: '/images/install_step1_more_info.png',
-      alt: 'Windows protected your PC - Click More info',
-      callout: 'Click "More info" text',
-      highlightCoords: { top: '39%', left: '33%' },
-      badgeColor: '#0078d4'
-    },
-    {
-      stepNumber: '02',
-      title: 'Verify & Click "Run anyway"',
-      subtitle: 'Official Publisher: Locco Mirror',
-      desc: 'After clicking "More info", you will see the official verified publisher listed as "Locco Mirror". Click the white "Run anyway" button to start the fast, clean installation.',
-      image: '/images/install_step2_run_anyway.png',
-      alt: 'SmartScreen expanded - Publisher Locco Mirror, Click Run anyway',
-      callout: 'Click "Run anyway"',
-      highlightCoords: { bottom: '26%', right: '40%' },
-      badgeColor: '#10b981'
-    }
-  ];
+  const videoId = 'ku1l8no-aHc';
+  const startSeconds = 0;
+  const videoTitle = 'Android Phone Ko PC Pe Mirror Kaise Kare? 4K 120FPS, Low Delay | Locco Mirror Installation Guide';
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?start=${startSeconds}&rel=0`;
+  const watchUrl = `https://www.youtube.com/watch?v=${videoId}&t=${startSeconds}s`;
 
   const safetyPoints = [
     {
@@ -90,82 +67,80 @@ export function InstallGuide() {
         {/* Header */}
         <div className="section-header-center">
           <div className="install-badge-pill">
-            <ShieldCheck size={16} />
-            <span>Windows Installation Guide</span>
+            <Play size={15} fill="currentColor" />
+            <span>Video Installation &amp; Setup Guide</span>
           </div>
           <h2 className="font-headline-lg section-title">
-            How to Install Locco Mirror on Windows
+            How to Install &amp; Connect Locco Mirror
           </h2>
           <p className="font-body-lg section-subtitle">
-            Follow these 2 simple steps to pass Windows SmartScreen in under 5 seconds.
-            Locco Mirror is verified, 100% virus-free, and code-signed.
+            Watch the full step-by-step video tutorial to install on Windows, pass SmartScreen, and mirror your screen at ultra-smooth 120 FPS in under 2 minutes.
           </p>
         </div>
 
-        {/* 2-Step Interactive Visual Workflow Cards */}
-        <div className="install-steps-grid">
-          {steps.map((step, idx) => (
-            <div key={step.stepNumber} className="install-step-card">
-              <div className="install-step-header">
-                <div className="install-step-num-badge">
-                  <span>Step {step.stepNumber}</span>
-                </div>
-                <div className="install-step-heading-group">
-                  <h3 className="install-step-title">{step.title}</h3>
-                  <p className="install-step-sub">{step.subtitle}</p>
-                </div>
+        {/* Video Showcase Player */}
+        <div className="install-video-showcase">
+          <div className="install-video-card">
+            {/* Window Top Bar */}
+            <div className="install-video-header">
+              <div className="install-video-dots">
+                <span className="dot dot-close" />
+                <span className="dot dot-min" />
+                <span className="dot dot-max" />
               </div>
-
-              {/* Screenshot Preview Card with Visual Accents */}
-              <div 
-                className="install-image-wrapper"
-                onClick={() => setSelectedImage(step.image)}
-                title="Click to view full preview"
-              >
-                <div className="install-window-bar">
-                  <div className="install-dots">
-                    <span className="dot dot-close" />
-                    <span className="dot dot-min" />
-                    <span className="dot dot-max" />
-                  </div>
-                  <span className="install-window-title">SmartScreen Dialog</span>
-                  <div className="install-zoom-hint">
-                    <Maximize2 size={13} />
-                    <span>Zoom</span>
-                  </div>
-                </div>
-
-                <div className="install-img-container">
-                  <img 
-                    src={step.image} 
-                    alt={step.alt} 
-                    className="install-step-screenshot" 
-                    loading="lazy"
-                  />
-
-                  {/* Visual Click Pointer / Action Indicator */}
-                  <div className={`install-pointer-badge badge-step-${idx + 1}`}>
-                    <div className="pointer-pulse" />
-                    <MousePointerClick size={16} className="pointer-icon" />
-                    <span>{step.callout}</span>
-                  </div>
-                </div>
+              <div className="install-video-badge-title">
+                <Play size={14} fill="currentColor" />
+                <span>Locco Mirror • Windows &amp; Android Full Installation Guide</span>
               </div>
-
-              {/* Step Description */}
-              <div className="install-step-body">
-                <p className="install-step-desc">{step.desc}</p>
-                <div className="install-step-action-tag">
-                  <CheckCircle2 size={16} />
-                  <span>
-                    {idx === 0 
-                      ? 'Reveals publisher and safe options' 
-                      : 'Launches Locco Mirror high-speed setup'}
-                  </span>
-                </div>
-              </div>
+              <span className="install-video-quality">4K • 120 FPS</span>
             </div>
-          ))}
+
+            {/* Responsive 16:9 Video Embed */}
+            <div className="install-video-frame-container">
+              <iframe
+                className="install-video-iframe"
+                src={embedUrl}
+                title={videoTitle}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+
+            {/* Video Footer Metadata & Quick Chapters */}
+            <div className="install-video-footer">
+              <div className="install-video-creator">
+                <span className="creator-label">Video Guide by</span>
+                <span className="creator-name">Smile Playings</span>
+              </div>
+
+              {/* Step Highlights */}
+              <div className="install-video-chapters">
+                <span className="video-chip">
+                  <CheckCircle2 size={13} /> Windows 64-bit Install
+                </span>
+                <span className="video-chip">
+                  <CheckCircle2 size={13} /> 1-Click SmartScreen Pass
+                </span>
+                <span className="video-chip">
+                  <CheckCircle2 size={13} /> Zero-Lag USB Mirroring
+                </span>
+                <span className="video-chip">
+                  <CheckCircle2 size={13} /> 120 FPS Gaming Setup
+                </span>
+              </div>
+
+              <a
+                href={watchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="install-video-yt-link"
+              >
+                <span>Watch on YouTube</span>
+                <ExternalLink size={14} />
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Trust & Security Verification Bar */}
@@ -250,29 +225,6 @@ export function InstallGuide() {
         </div>
 
       </div>
-
-      {/* Fullscreen Image Lightbox Modal */}
-      {selectedImage && (
-        <div className="install-lightbox-overlay" onClick={() => setSelectedImage(null)}>
-          <div className="install-lightbox-modal" onClick={(e) => e.stopPropagation()}>
-            <button 
-              className="install-lightbox-close" 
-              onClick={() => setSelectedImage(null)}
-              aria-label="Close image preview"
-            >
-              ×
-            </button>
-            <img 
-              src={selectedImage} 
-              alt="Windows SmartScreen Installation Fullscreen" 
-              className="install-lightbox-img" 
-            />
-            <div className="install-lightbox-caption">
-              <span>Windows Defender SmartScreen • Official Locco Mirror Installer</span>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
