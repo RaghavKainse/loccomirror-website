@@ -9,7 +9,7 @@ export function Navbar({ onDownloadClick }) {
     { label: 'Camera & Mirror', href: '#camera-features' },
     { label: 'Install Guide', href: '#install-guide' },
     { label: 'Performance', href: '#pricing' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'Contact', href: '#contact' },
   ];
 
   const handleLinkClick = (e, href) => {
@@ -29,7 +29,6 @@ export function Navbar({ onDownloadClick }) {
           <a href="#" className="navbar-brand" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <img src="/logo.png" alt="Locco Mirror Logo" className="navbar-logo-img" />
             <span className="navbar-logo-text">Locco Mirror</span>
-            <span className="navbar-badge">v2.4</span>
           </a>
 
           {/* Desktop Nav Links */}
@@ -49,18 +48,8 @@ export function Navbar({ onDownloadClick }) {
 
         {/* Right: Actions */}
         <div className="navbar-right">
-          <div className="navbar-lang-pill" title="Current Language">
-            <span className="material-symbols-outlined icon-18">language</span>
-            <span>EN</span>
-          </div>
+         
 
-          <a
-            href="#download"
-            className="navbar-changelog-link"
-            onClick={(e) => handleLinkClick(e, '#download')}
-          >
-            Changelog
-          </a>
 
           <a
             href="#download"
@@ -76,9 +65,7 @@ export function Navbar({ onDownloadClick }) {
             Download Free (64-bit)
           </a>
 
-          <div className="navbar-avatar" title="Account">
-            <span className="material-symbols-outlined icon-18">person</span>
-          </div>
+       
 
           {/* Mobile Hamburger Toggle */}
           <button

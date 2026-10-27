@@ -136,23 +136,8 @@ export function DownloadCenter({ onOpenNotifyModal }) {
               </div>
 
               <div className="douwan-brand-name">LOCCO MIRROR</div>
-              <div className="douwan-brand-version">v2.4.1 (Stable)</div>
 
-              {/* Quick Feature Badges */}
-              <div className="douwan-badge-list">
-                <div className="douwan-badge-item">
-                  <span className="douwan-badge-dot dot-green" />
-                  <span>&lt; 10ms Direct Pipeline</span>
-                </div>
-                <div className="douwan-badge-item">
-                  <span className="douwan-badge-dot dot-blue" />
-                  <span>Universal UsbDk Support</span>
-                </div>
-                <div className="douwan-badge-item">
-                  <span className="douwan-badge-dot dot-purple" />
-                  <span>No USB Debugging Needed</span>
-                </div>
-              </div>
+             
             </div>
 
             {/* Right Column: Platform Categories & Download Buttons */}
@@ -342,27 +327,7 @@ export function DownloadCenter({ onOpenNotifyModal }) {
             </div>
           </div>
 
-          {/* Bottom Trust & Driver Reassurance Banner */}
-          <div className="douwan-bottom-banner">
-            <div className="banner-left-trust">
-              <ShieldCheck size={20} className="shield-trust-icon" />
-              <span className="trust-text">
-                Universal UsbDk drivers bundled: Realme, Oppo, Vivo, Samsung, OnePlus, Xiaomi &amp; Motorola supported.
-              </span>
-            </div>
-            <div className="banner-right-links">
-              <a href="#install-guide" className="instructions-link" style={{ background: '#0052d1', color: '#ffffff', padding: '6px 12px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600 }}>
-                <span>🛡️ Windows Install Guide</span>
-                <ArrowRight size={14} />
-              </a>
-              <span className="trust-pill">100% Offline Capable</span>
-              <a href="#faq" className="instructions-link">
-                <span>Connection Steps</span>
-                <ArrowRight size={14} />
-              </a>
-            </div>
-          </div>
-
+         
         </div>
       </div>
     </section>

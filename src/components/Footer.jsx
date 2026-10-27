@@ -99,6 +99,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('#contact'); }}>
+                  Contact Us
+                </a>
+              </li>
+              <li>
                 <a href="/privacy-policy" onClick={(e) => { e.preventDefault(); alert("Locco Mirror does not collect personal data. All screen mirroring is 100% offline point-to-point."); }}>
                   Privacy Policy
                 </a>
@@ -110,6 +115,42 @@ export function Footer() {
               </li>
             </ul>
           </div>
+
+          {/* Column 6: Contact Us */}
+          <div className="footer-links-col footer-contact-col">
+            <div className="font-label-lg footer-col-title">Contact Us</div>
+            <div className="footer-contact-items">
+              <div className="footer-contact-entry">
+                <span className="footer-contact-type">Technical Support</span>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=support.loccomirror@gmail.com&su=Locco%20Mirror%20Support%20Request"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-email-badge"
+                  title="Open in Gmail (support.loccomirror@gmail.com)"
+                >
+                  <span className="material-symbols-outlined icon-16">support_agent</span>
+                  <span>support.loccomirror@gmail.com</span>
+                </a>
+              </div>
+              <div className="footer-contact-entry">
+                <span className="footer-contact-type">General &amp; Business</span>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=loccomirror@gmail.com&su=Locco%20Mirror%20General%20Inquiry"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-email-badge"
+                  title="Open in Gmail (loccomirror@gmail.com)"
+                >
+                  <span className="material-symbols-outlined icon-16">mail</span>
+                  <span>loccomirror@gmail.com</span>
+                </a>
+              </div>
+              <p className="footer-contact-note">
+                ⚡ Typical reply within 12 hours. English &amp; Hindi support.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
@@ -118,6 +159,9 @@ export function Footer() {
             © 2026 Locco Mirror. All rights reserved.
           </span>
           <div className="footer-legal-links">
+            <a href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('#contact'); }}>
+              Contact Us
+            </a>
             <a href="#about" onClick={(e) => { e.preventDefault(); scrollTo('#about'); }}>
               Security
             </a>

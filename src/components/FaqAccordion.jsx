@@ -31,47 +31,6 @@ export function FaqAccordion() {
   };
 
   return (
-    <section className="faq-section" id="faq">
-      <div className="container-max faq-container">
-        {/* Header */}
-        <div className="section-header-center">
-          <span className="section-pill-tag">Got Questions?</span>
-          <h2 className="font-headline-lg section-title">
-            Frequently Asked Questions
-          </h2>
-          <p className="font-body-md section-subtitle">
-            Everything you need to know about setting up and using Locco Mirror &amp; Camera.
-          </p>
-        </div>
-
-        {/* Accordion List */}
-        <div className="faq-accordion-list">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div key={index} className={`faq-card ${isOpen ? 'active' : ''}`}>
-                <button
-                  type="button"
-                  className="faq-question-btn"
-                  onClick={() => toggleFaq(index)}
-                  aria-expanded={isOpen}
-                >
-                  <span className="font-headline-sm faq-question-text">{faq.q}</span>
-                  <span className={`material-symbols-outlined faq-chevron ${isOpen ? 'rotate-180' : ''}`}>
-                    expand_more
-                  </span>
-                </button>
-
-                {isOpen && (
-                  <div className="faq-answer-panel font-body-md">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+    <div className=""></div>
   );
 }
