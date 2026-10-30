@@ -46,11 +46,11 @@ export function DownloadCenter({ onOpenNotifyModal }) {
   const [downloadToast, setDownloadToast] = useState(null);
 
   // Exact file paths for direct download
-  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.6.zip";
+  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.7.zip";
   const ANDROID_APK_URL = "/downloads/LoccoMirror.apk";
   const ANDROID_DIRECT_LINK = typeof window !== 'undefined' 
     ? `${window.location.origin}/downloads/LoccoMirror.apk`
-    : "https://github.com/RaghavKainse/loccomirror/releases/download/v1.0.6/LoccoMirror.apk";
+    : "https://github.com/RaghavKainse/loccomirror/releases/download/v1.0.7/LoccoMirror.apk";
 
   const handleDownload = (platform, filename, size) => {
     confetti({
@@ -165,8 +165,8 @@ export function DownloadCenter({ onOpenNotifyModal }) {
                   {/* Windows 64-bit Button (DOWNLOADABLE) */}
                   <a
                     href={WINDOWS_EXE_URL}
-                    download="LoccoMirror_Setup_v1.0.6.zip"
-                    onClick={() => handleDownload('windows', 'LoccoMirror_Setup_v1.0.6.zip', '20.6 MB')}
+                    download="LoccoMirror_Setup_v1.0.7.zip"
+                    onClick={() => handleDownload('windows', 'LoccoMirror_Setup_v1.0.7.zip', '20.6 MB')}
                     className="douwan-platform-btn btn-windows"
                     title="Download Locco Mirror for Windows 11 / 10 (.zip)"
                   >
@@ -175,7 +175,7 @@ export function DownloadCenter({ onOpenNotifyModal }) {
                     </div>
                     <div className="btn-label-group">
                       <div className="btn-main-label">
-                        Windows 64-bit (.ZIP) <span className="btn-version-pill">v1.0.6</span>
+                        Windows 64-bit (.ZIP) <span className="btn-version-pill">v1.0.7</span>
                       </div>
                       <div className="btn-sub-label">
                         Windows 11 &amp; 10 • SmartScreen Safe (20.6 MB)
@@ -246,7 +246,7 @@ export function DownloadCenter({ onOpenNotifyModal }) {
                     </div>
                     <div className="btn-label-group">
                       <div className="btn-main-label">
-                        Android Apk <span className="btn-version-pill">v1.0.6</span>
+                        Android Apk <span className="btn-version-pill">v1.0.7</span>
                       </div>
                       <div className="btn-sub-label">
                         Direct APK (14.2 MB) • Android 6.0+

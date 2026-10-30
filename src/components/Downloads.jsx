@@ -39,9 +39,9 @@ export function Downloads({ onOpenNotifyModal }) {
   const [downloadToast, setDownloadToast] = useState(null);
 
   // Direct local file downloads (guaranteed to download immediately)
-  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.6.zip";
+  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.7.zip";
   const ANDROID_APK_URL = "/downloads/LoccoMirror.apk";
-  const ANDROID_CLOUD_URL = "https://github.com/RaghavKainse/screenmirrorLoco/releases/download/v1.0.6/LoccoMirror.apk";
+  const ANDROID_CLOUD_URL = "https://github.com/RaghavKainse/screenmirrorLoco/releases/download/v1.0.7/LoccoMirror.apk";
 
   const handleDownload = (platform, filename) => {
     confetti({
@@ -144,14 +144,14 @@ export function Downloads({ onOpenNotifyModal }) {
                   {/* Windows 64-bit Button (DOWNLOADABLE) */}
                   <a
                     href={WINDOWS_EXE_URL}
-                    download="LoccoMirror_Setup_v1.0.6.zip"
-                    onClick={() => handleDownload('windows', 'LoccoMirror_Setup_v1.0.6.zip')}
+                    download="LoccoMirror_Setup_v1.0.7.zip"
+                    onClick={() => handleDownload('windows', 'LoccoMirror_Setup_v1.0.7.zip')}
                     className="douwan-btn douwan-btn-blue"
                   >
                     <WindowsIcon size={22} color="#ffffff" />
                     <div>
                       <div style={{ fontWeight: 700, fontSize: '15px', lineHeight: 1.2 }}>
-                        Windows 64-bit (.ZIP) <span style={{ fontSize: '12px', opacity: 0.85, fontWeight: 400 }}>v1.0.6</span>
+                        Windows 64-bit (.ZIP) <span style={{ fontSize: '12px', opacity: 0.85, fontWeight: 400 }}>v1.0.7</span>
                       </div>
                       <div style={{ fontSize: '11px', opacity: 0.85 }}>SmartScreen Safe • Windows 10/11</div>
                     </div>
