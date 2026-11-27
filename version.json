@@ -8,5 +8,5 @@
   "windows_exe_url": "https://www.loccomirror.in/downloads/LoccoMirror_Setup_v1.0.7.exe",
   "apk_url": "https://www.loccomirror.in/downloads/LoccoMirror.apk",
   "fallback_apk_url": "https://raw.githubusercontent.com/RaghavKainse/screenmirrorLoco/main/apk/LoccoMirror.apk",
-  "release_notes": "• v1.0.7 Display Engine Stability & Anti-Blur Enhancements\n• Fixed Screen Mirror Disappearing/Reappearing on Static Frames\n• 16x Anisotropic High-Fidelity D3D11 Sampler\n• Dynamic Bitrate & Adaptive Resolution Optimization (25 Mbps Default)\n• Direct USB (AOA 2.0) Packet Protocol Hardening"
+  "release_notes": "• v1.0.7 Smooth 60 FPS & Low-Heat Streaming Engine\n• Fixed Browser Sign-Up Sync & Free Instant Watermark Removal\n• Active Display GPU Selector & Lower GPU Overhead\n• Day/Light Mode Frosted Sidebar Polish\n• Direct USB (AOA 2.0) Batched Audio & Write Coalescing\n• Landscape Orientation Auto-Sync & Background WakeLock"
 }
