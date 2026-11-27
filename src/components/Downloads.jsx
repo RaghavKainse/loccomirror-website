@@ -38,12 +38,18 @@ export function Downloads({ onOpenNotifyModal }) {
   const [showQrCode, setShowQrCode] = useState(false);
   const [downloadToast, setDownloadToast] = useState(null);
 
-  // Direct local file downloads (guaranteed to download immediately)
-  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.7.zip";
+  // Direct local file downloads (1-click signed Windows .exe + Android .apk)
+  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.7.exe";
   const ANDROID_APK_URL = "/downloads/LoccoMirror.apk";
   const ANDROID_CLOUD_URL = "https://github.com/RaghavKainse/screenmirrorLoco/releases/download/v1.0.7/LoccoMirror.apk";
 
   const handleDownload = (platform, filename) => {
+    window.gtag?.('event', 'download_click', {
+      platform,
+      file_name: filename,
+      location: 'downloads_legacy',
+    });
+
     confetti({
       particleCount: 90,
       spread: 75,

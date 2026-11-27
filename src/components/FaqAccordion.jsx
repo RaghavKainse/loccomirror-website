@@ -5,24 +5,24 @@ export function FaqAccordion() {
 
   const faqs = [
     {
-      q: 'Does Locco require Wi-Fi or a mobile hotspot?',
-      a: 'No. Just plug in a standard USB charging cable to mirror instantly — no hotspot or Wi-Fi required, and zero USB debugging needed on Android. For wireless mode, both devices simply need to be connected to the same local Wi-Fi router.',
+      q: 'Is Locco Mirror really 100% free? Why is there a watermark in guest mode?',
+      a: 'Yes! Locco Mirror is 100% free forever with unlimited 4K mirroring, 60-120 FPS streaming, internal game audio, keyboard/mouse control, and OBS Virtual Camera. Guest mode displays a small watermark — simply sign in once with your free Google account inside the Windows app and the watermark is removed instantly (no credit card or payment required).',
     },
     {
-      q: 'Which operating systems and phone models are supported?',
-      a: 'Locco supports iPhone, iPad, and all modern Android devices running Android 6.0 and above. On the host computer, Locco runs flawlessly on Windows 10/11 (64-bit) as well as macOS (both Apple Silicon M1/M2/M3 and Intel chips). Up to 128 devices can be mirrored concurrently for studio batch operations.',
+      q: 'Does Locco require Wi-Fi, root, or USB Debugging on Android?',
+      a: 'No root and no Developer Options / USB Debugging required. Just plug in your regular USB charging cable and Locco Mirror connects over Direct USB (AOA 2.0) in seconds. You can also connect wirelessly on the same Wi-Fi.',
     },
     {
-      q: 'How low is the latency compared to standard AirPlay or Miracast?',
-      a: "Traditional AirPlay and Miracast exhibit 80ms–200ms latency, making games and mouse interaction sluggish. Locco's proprietary direct hardware pipeline pushes wired USB latency under 15ms at 60~120fps, providing instantaneous tactile response for competitive mobile gaming and fast keyboard typing.",
+      q: 'Should I download the Windows app, the Android APK, or both?',
+      a: 'Start with the 1-click Windows Setup (.exe) on your PC. When you plug your Android phone in via USB, the PC app can guide or install the companion APK automatically — or you can download LoccoMirror.apk directly onto your phone from the Android button above.',
     },
     {
-      q: 'Can I use my smartphone as a PC webcam without an internet connection?',
-      a: 'Yes! With Locco Camera installed, you connect your phone over USB and select "Locco Media Camera" inside Zoom, Discord, OBS, or Microsoft Teams. Video transmission remains 100% offline and point-to-point, ensuring both strict data privacy and zero ISP bandwidth consumption.',
+      q: 'Why did my PC run smoothly with low GPU load and internal game sound?',
+      a: 'Locco Mirror decodes H.264/H.265 using Direct3D 11 hardware acceleration on your primary display GPU and captures internal Android system/game sound at 48kHz stereo PCM without AUX cables or Bluetooth delay.',
     },
     {
-      q: 'Is Locco free? What is included with Pro VIP?',
-      a: 'Locco includes a robust free edition that allows unlimited low-latency screen mirroring and basic testing. The Pro VIP license is $9.99 per 12 months, unlocking unlimited 4K video recording, zero watermark, 10 simultaneous device connections, and includes a full license to Locco 4K Camera at no extra cost.',
+      q: 'Can I use my phone as a 4K webcam in OBS Studio, Discord, or Zoom?',
+      a: 'Yes! Open the Camera tab inside Locco Mirror, enable the Virtual Camera driver, and select "Locco Media Camera" directly in OBS Studio, Discord, Zoom, or Google Meet.',
     },
   ];
 
@@ -31,6 +31,44 @@ export function FaqAccordion() {
   };
 
   return (
-    <div className=""></div>
+    <section className="faq-section" id="faq">
+      <div className="container-max faq-container">
+        <div className="section-header-center">
+          <span className="section-pill-tag">Common Questions</span>
+          <h2 className="font-headline-lg section-title">
+            Frequently Asked Questions
+          </h2>
+          <p className="font-body-lg section-subtitle">
+            Everything you need to start mirroring your Android screen to Windows PC in under 30 seconds.
+          </p>
+        </div>
+
+        <div className="faq-accordion-list">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div key={index} className={`faq-card ${isOpen ? 'active' : ''}`}>
+                <button
+                  type="button"
+                  onClick={() => toggleFaq(index)}
+                  className="faq-question-btn"
+                  aria-expanded={isOpen}
+                >
+                  <span className="font-headline-sm faq-question-text">{faq.q}</span>
+                  <span className={`material-symbols-outlined faq-chevron ${isOpen ? 'rotate-180' : ''}`}>
+                    expand_more
+                  </span>
+                </button>
+                {isOpen && (
+                  <div className="font-body-md faq-answer-panel">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }

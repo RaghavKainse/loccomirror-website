@@ -48,7 +48,7 @@ export function CoreFeatures() {
       icon: 'live_tv',
       colorType: 'primary',
       title: 'OBS & Discord Ready',
-      desc: 'Direct hardware accelerated window capture and virtual media camera integration. No watermark on Pro subscriptions.',
+      desc: 'Direct hardware accelerated window capture and virtual media camera integration. Sign in free with Google to remove watermark.',
     },
   ];
 

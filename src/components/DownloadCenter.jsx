@@ -46,13 +46,20 @@ export function DownloadCenter({ onOpenNotifyModal }) {
   const [downloadToast, setDownloadToast] = useState(null);
 
   // Exact file paths for direct download
-  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.7.zip";
+  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.7.exe";
+  const WINDOWS_ZIP_URL = "/downloads/LoccoMirror_Setup_v1.0.7.zip";
   const ANDROID_APK_URL = "/downloads/LoccoMirror.apk";
   const ANDROID_DIRECT_LINK = typeof window !== 'undefined' 
     ? `${window.location.origin}/downloads/LoccoMirror.apk`
     : "https://github.com/RaghavKainse/loccomirror/releases/download/v1.0.7/LoccoMirror.apk";
 
   const handleDownload = (platform, filename, size) => {
+    window.gtag?.('event', 'download_click', {
+      platform,
+      file_name: filename,
+      location: 'download_center',
+    });
+
     confetti({
       particleCount: 85,
       spread: 75,
@@ -162,23 +169,24 @@ export function DownloadCenter({ onOpenNotifyModal }) {
                 </div>
 
                 <div className="platform-buttons-row">
-                  {/* Windows 64-bit Button (DOWNLOADABLE) */}
+                  {/* Windows 64-bit Button (1-Click Signed .EXE) */}
                   <a
                     href={WINDOWS_EXE_URL}
-                    download="LoccoMirror_Setup_v1.0.7.zip"
-                    onClick={() => handleDownload('windows', 'LoccoMirror_Setup_v1.0.7.zip', '20.6 MB')}
+                    download="LoccoMirror_Setup_v1.0.7.exe"
+                    onClick={() => handleDownload('windows', 'LoccoMirror_Setup_v1.0.7.exe', '21.2 MB')}
                     className="douwan-platform-btn btn-windows"
-                    title="Download Locco Mirror for Windows 11 / 10 (.zip)"
+                    title="Download Locco Mirror 1-Click Installer for Windows 11 / 10 (.exe)"
                   >
                     <div className="btn-icon-box">
                       <WindowsIcon size={24} color="#ffffff" />
                     </div>
                     <div className="btn-label-group">
                       <div className="btn-main-label">
-                        Windows 64-bit (.ZIP) <span className="btn-version-pill">v1.0.7</span>
+                        Windows 64-bit (.EXE) <span className="btn-version-pill">v1.0.7</span>
                       </div>
                       <div className="btn-sub-label">
-                        Windows 11 &amp; 10 • SmartScreen Safe (20.6 MB)
+                        1-Click Signed Setup • 21.2 MB •{' '}
+                        <span style={{ textDecoration: 'underline' }}>Direct Install</span>
                       </div>
                     </div>
                     <div className="btn-download-action">
@@ -186,27 +194,39 @@ export function DownloadCenter({ onOpenNotifyModal }) {
                     </div>
                   </a>
 
-                  {/* macOS Button (COMING SOON) */}
-                  <button
-                    type="button"
-                    onClick={() => onOpenNotifyModal && onOpenNotifyModal('macOS Universal')}
+                  {/* Windows .ZIP Alternative (For restricted networks) */}
+                  <a
+                    href={WINDOWS_ZIP_URL}
+                    download="LoccoMirror_Setup_v1.0.7.zip"
+                    onClick={() => handleDownload('windows_zip', 'LoccoMirror_Setup_v1.0.7.zip', '20.7 MB')}
                     className="douwan-platform-btn btn-macos"
-                    title="Get notified when macOS version releases"
+                    style={{ opacity: 0.92 }}
+                    title="Alternative compressed .ZIP package for corporate/school firewalls"
                   >
                     <div className="btn-icon-box">
-                      <AppleIcon size={24} color="#ffffff" />
+                      <ShieldCheck size={24} color="#ffffff" />
                     </div>
                     <div className="btn-label-group">
                       <div className="btn-main-label">
-                        macOS Universal <span className="btn-version-pill soon-pill">Coming Soon</span>
+                        Windows Archive (.ZIP) <span className="btn-version-pill">Alt</span>
                       </div>
                       <div className="btn-sub-label">
-                        Apple Silicon M1-M4 &amp; Intel • Notify Me
+                        20.7 MB • Same Signed Setup Inside ZIP
                       </div>
                     </div>
-                    <div className="btn-arrow-action">
-                      <ArrowRight size={18} />
+                    <div className="btn-download-action">
+                      <Download size={18} />
                     </div>
+                  </a>
+                </div>
+                <div style={{ marginTop: '10px', fontSize: '12px', color: 'var(--on-surface-variant)' }}>
+                  💡 <strong>Tip:</strong> Install Windows app first — it can auto-push the Android app when you plug in USB, or download the APK below.{' '}
+                  <button
+                    type="button"
+                    onClick={() => onOpenNotifyModal && onOpenNotifyModal('macOS Universal')}
+                    style={{ background: 'none', border: 'none', padding: 0, color: '#0052d1', fontWeight: 600, cursor: 'pointer', textDecoration: 'underline', fontSize: '12px' }}
+                  >
+                    Need macOS? Get notified →
                   </button>
                 </div>
               </div>

@@ -5,11 +5,19 @@ import { WindowsIcon, AndroidIcon } from './icons/PlatformIcons';
 
 export function Hero({ onOpenNotifyModal }) {
   const [activeFps, setActiveFps] = useState(120);
+  const [copiedPcLink, setCopiedPcLink] = useState(false);
 
-  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.7.zip";
+  const WINDOWS_EXE_URL = "/downloads/LoccoMirror_Setup_v1.0.7.exe";
+  const WINDOWS_ZIP_URL = "/downloads/LoccoMirror_Setup_v1.0.7.zip";
   const ANDROID_APK_URL = "/downloads/LoccoMirror.apk";
 
-  const triggerConfetti = (platform) => {
+  const triggerConfetti = (platform, filename = '') => {
+    window.gtag?.('event', 'download_click', {
+      platform,
+      file_name: filename,
+      location: 'hero',
+    });
+
     confetti({
       particleCount: 75,
       spread: 70,
@@ -18,6 +26,16 @@ export function Hero({ onOpenNotifyModal }) {
         ? ['#0052d1', '#1769ff', '#ffffff', '#00d4ff']
         : ['#059669', '#10b981', '#ffffff', '#34d399']
     });
+  };
+
+  const handleCopyPcLink = () => {
+    const url = typeof window !== 'undefined'
+      ? `${window.location.origin}${WINDOWS_EXE_URL}`
+      : 'https://www.loccomirror.in/downloads/LoccoMirror_Setup_v1.0.7.exe';
+    navigator.clipboard?.writeText(url);
+    window.gtag?.('event', 'copy_pc_link', { location: 'hero' });
+    setCopiedPcLink(true);
+    setTimeout(() => setCopiedPcLink(false), 3000);
   };
 
   return (
@@ -51,17 +69,17 @@ export function Hero({ onOpenNotifyModal }) {
 
             {/* Clean Download Buttons in Hero Section */}
             <div className="hero-simple-actions">
-              {/* Windows 64-bit Download Button */}
+              {/* Windows 64-bit 1-Click Installer */}
               <a
                 href={WINDOWS_EXE_URL}
-                download="LoccoMirror_Setup_v1.0.7.zip"
+                download="LoccoMirror_Setup_v1.0.7.exe"
                 className="hero-simple-btn btn-win-simple"
-                onClick={() => triggerConfetti('windows')}
-                title="Download Locco Mirror for Windows (64-bit .zip)"
+                onClick={() => triggerConfetti('windows', 'LoccoMirror_Setup_v1.0.7.exe')}
+                title="Download 1-Click Signed Windows Installer (.exe)"
               >
                 <WindowsIcon size={20} color="#ffffff" />
                 <span className="btn-main-txt">Download for Windows</span>
-                <span className="btn-arch-tag">64-bit .ZIP</span>
+                <span className="btn-arch-tag">1-Click .EXE</span>
               </a>
 
               {/* Android APK Download Button */}
@@ -69,22 +87,64 @@ export function Hero({ onOpenNotifyModal }) {
                 href={ANDROID_APK_URL}
                 download="LoccoMirror.apk"
                 className="hero-simple-btn btn-apk-simple"
-                onClick={() => triggerConfetti('android')}
+                onClick={() => triggerConfetti('android', 'LoccoMirror.apk')}
                 title="Download Locco Mirror Android APK"
               >
                 <AndroidIcon size={20} color="#ffffff" />
-                <span className="btn-main-txt">Download for Android</span>
-                <span className="btn-arch-tag apk-tag">APK</span>
+                <span className="btn-main-txt">Android App</span>
+                <span className="btn-arch-tag apk-tag">.APK</span>
               </a>
             </div>
 
-            {/* Micro Details */}
+            {/* Micro Details + Quick Secondary Options */}
             <div className="hero-file-meta">
-              <span>Windows 11 / 10 (64-bit • 20.8 MB)</span>
+              <span>Windows 11 / 10 (v1.0.7 • 21.2 MB)</span>
               <span className="meta-sep">•</span>
               <span>Android 6.0+ (14.2 MB)</span>
               <span className="meta-sep">•</span>
-              <span className="meta-free">100% Free</span>
+              <span className="meta-free">100% Free Forever</span>
+              <span className="meta-sep">•</span>
+              <a
+                href={WINDOWS_ZIP_URL}
+                download="LoccoMirror_Setup_v1.0.7.zip"
+                onClick={() => triggerConfetti('windows_zip', 'LoccoMirror_Setup_v1.0.7.zip')}
+                style={{ color: '#0052d1', fontWeight: 600, textDecoration: 'underline' }}
+              >
+                .ZIP Archive
+              </a>
+              <span className="meta-sep">•</span>
+              <button
+                type="button"
+                onClick={handleCopyPcLink}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  padding: 0,
+                  cursor: 'pointer',
+                  color: '#0052d1',
+                  fontWeight: 600,
+                  fontSize: 'inherit',
+                  textDecoration: 'underline',
+                }}
+                title="Browsing on your phone? Copy the Windows installer link for your PC"
+              >
+                {copiedPcLink ? '✓ Copied PC Link' : 'On Phone? Copy PC Link'}
+              </button>
+            </div>
+
+            <div className="hero-simple-trust">
+              <span className="trust-item">
+                <ShieldCheck size={15} className="text-emerald" />
+                <span>Signed Setup • Zero Adware</span>
+              </span>
+              <span className="trust-item">
+                <CheckCircle2 size={15} className="text-blue" />
+                <span>Free Google Sign-In Removes Watermark</span>
+              </span>
+              <span className="trust-item">
+                <Sparkles size={15} className="text-emerald" />
+                <span>No USB Debugging Needed</span>
+              </span>
             </div>
 
 

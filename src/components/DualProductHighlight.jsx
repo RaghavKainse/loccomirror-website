@@ -57,7 +57,7 @@ export function DualProductHighlight() {
             </div>
 
             <div className="product-card-footer">
-              <span className="product-footer-note">Free version available • Pro from $9.99/yr</span>
+              <span className="product-footer-note">100% Free Forever • No Watermark with Free Account</span>
               <a
                 href="#features"
                 className="product-footer-link link-primary"
@@ -105,7 +105,7 @@ export function DualProductHighlight() {
             </div>
 
             <div className="product-card-footer">
-              <span className="product-footer-note">Bundled free with Locco Mirror Pro</span>
+              <span className="product-footer-note">Bundled 100% Free with Locco Mirror</span>
               <a
                 href="#camera-features"
                 className="product-footer-link link-secondary"

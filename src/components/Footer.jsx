@@ -62,8 +62,23 @@ export function Footer() {
             <div className="font-label-lg footer-col-title">Downloads</div>
             <ul className="footer-link-list">
               <li>
-                <a href="/downloads/LoccoMirror_Setup_v1.0.7.zip" download="LoccoMirror_Setup_v1.0.7.zip" title="Download Locco Mirror for Windows (.zip)">
-                  Windows 64-bit (.ZIP)
+                <a
+                  href="/downloads/LoccoMirror_Setup_v1.0.7.exe"
+                  download="LoccoMirror_Setup_v1.0.7.exe"
+                  title="Download Locco Mirror 1-Click Windows Installer (.exe)"
+                  onClick={() => window.gtag?.('event', 'download_click', { platform: 'windows_exe', location: 'footer' })}
+                >
+                  Windows 64-bit (.EXE)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/downloads/LoccoMirror_Setup_v1.0.7.zip"
+                  download="LoccoMirror_Setup_v1.0.7.zip"
+                  title="Download Locco Mirror Portable Archive (.zip)"
+                  onClick={() => window.gtag?.('event', 'download_click', { platform: 'windows_zip', location: 'footer' })}
+                >
+                  Windows Archive (.ZIP)
                 </a>
               </li>
               <li>
@@ -72,7 +87,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/downloads/LoccoMirror.apk" download="LoccoMirror.apk" title="Download Locco Mirror Android APK">
+                <a
+                  href="/downloads/LoccoMirror.apk"
+                  download="LoccoMirror.apk"
+                  title="Download Locco Mirror Android APK"
+                  onClick={() => window.gtag?.('event', 'download_click', { platform: 'android_apk', location: 'footer' })}
+                >
                   Android APK (v1.0.7)
                 </a>
               </li>
